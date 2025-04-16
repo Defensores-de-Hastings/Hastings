@@ -20,21 +20,20 @@ namespace PI_3_Defensores_de_Hastings
     public partial class frmLobbyDaPartida : Form
     {
         private int _idSala;
-        private string _idVez;
-        private string _suaVez;
-        private List<string> _letras = new List<string> {};
+        private string _idDoJogador;//um string que recebe o ID do jogador
+        private string _IdDaVez; // um string que recebe o ID de quem é a vez quando é verificado a vez
+        private List<string> _letras = new List<string> {"A", "B", "C", "D", "E", "G", "H", "K","L", "M", "Q", "R", "T"};
 
-
-        public frmLobbyDaPartida(int idSala, string a, string b)
+        public frmLobbyDaPartida(int idSala, string IdJogador, string SenhaJogador)
         {
             InitializeComponent();
             tmrVez.Enabled = true;
             _idSala = idSala;
-            _idVez = a;
+            _idDoJogador = IdJogador;
 
 
-            lblMostraID.Text = a;
-            lblMostraSenha.Text = b;
+            lblMostraID.Text = IdJogador;
+            lblMostraSenha.Text = SenhaJogador;
 
             lblEstadoJogo.Visible = false;
             txtID.Text = lblMostraID.Text; // O ID do jogador é obtido do label
@@ -174,6 +173,9 @@ namespace PI_3_Defensores_de_Hastings
             {
                 lstbVerificarVez.Items.Add(linha);
                 string[] setorJogador = linha.Split(',');
+
+                _letras.Remove(setorJogador[1]); // remove da lista de letras o personagem que foi colocado
+
                 //verifica se a linha tem exatamente duas partes (setor e personagem)
                 if (setorJogador.Length == 2)
                 {
@@ -191,39 +193,29 @@ namespace PI_3_Defensores_de_Hastings
             string[] partes = verificacao.Split(',');
             if (partes.Length > 0)
             {
-                _suaVez = partes[0];
-                lblMostraVez.Text = partes[0];
+                _IdDaVez = partes[0]; // atualizar a string de quem é a vez
+                lblMostraVez.Text = partes[0]; // mostra em uma label de quem é a vez
             }
 
+        }
+        static int nivelAleatorio()
+        {
+            Random randomNivel = new Random();
+            int nivel = randomNivel.Next(1, 4);
+            return nivel;
         }
 
         private void robo()
         {
-            List<string> letrasDispo = new List<string>{"A", "B", "C", "D", "E", "G", "H", "K",
-                "L", "M", "Q", "R", "T"};
             Random randomLetras = new Random();
-            int indice = randomLetras.Next(letrasDispo.Count);
-            string letra = letrasDispo[indice];
-            _letras.Add(letra);
-
-            
-
-            Random nivelrand = new Random();
-
-            int nivel = nivelrand.Next(1, 4);
+            int indice = randomLetras.Next(_letras.Count);
+            string Personagem = _letras[indice];
 
 
-            if (_suaVez == _idVez)
+            int nivel = nivelAleatorio();
+            if (_idDoJogador == _IdDaVez)
             {
-                for (int i = 0; i < _letras.Count; i++)
-                {
-                    if (letra != _letras[i] && letra != _letras[i + 1] && letra != _letras[i + 2] && letra != _letras[i + 3])
-                    {
-                        colocarRobo(letra, nivel);
-
-                    }
-
-                }
+                colocarRobo(Personagem,nivel);     
 
             }
 
@@ -304,6 +296,7 @@ namespace PI_3_Defensores_de_Hastings
             tmrVez.Enabled = false;
             VerificarVez();
             robo();
+            VerificarVez();
             tmrVez.Enabled = true;
 
         }

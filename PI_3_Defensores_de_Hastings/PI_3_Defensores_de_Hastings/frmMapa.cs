@@ -62,7 +62,7 @@ namespace PI_3_Defensores_de_Hastings
                     continue;
                 }
      
-                string caminhoImagem = Path.Combine(@".\imagens", nomeArquivo);
+                string caminhoImagem = Path.Combine(@".\imagens\Personagens", nomeArquivo);
 
                 if (!File.Exists(caminhoImagem))
                 {

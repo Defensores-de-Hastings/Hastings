@@ -67,6 +67,7 @@
             this.lblEstadoJogo = new System.Windows.Forms.Label();
             this.lblUltimasJogadas = new System.Windows.Forms.Label();
             this.tmrVez = new System.Windows.Forms.Timer(this.components);
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbJogadores
@@ -481,12 +482,23 @@
             this.tmrVez.Interval = 3000;
             this.tmrVez.Tick += new System.EventHandler(this.tmrVez_Tick);
             // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(935, 519);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(111, 47);
+            this.btnSair.TabIndex = 41;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // frmLobbyDaPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1058, 578);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblUltimasJogadas);
             this.Controls.Add(this.lblEstadoJogo);
             this.Controls.Add(this.txtVoto);
@@ -572,5 +584,6 @@
         private System.Windows.Forms.Label lblEstadoJogo;
         private System.Windows.Forms.Label lblUltimasJogadas;
         private System.Windows.Forms.Timer tmrVez;
+        private System.Windows.Forms.Button btnSair;
     }
 }

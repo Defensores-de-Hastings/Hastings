@@ -21,16 +21,17 @@ namespace PI_3_Defensores_de_Hastings
     {
         private int _idSala;
         private string _idDoJogador;//um string que recebe o ID do jogador
+        private string _senhaDoJogador; // um string que recebe a senha do jogador
         private string _IdDaVez; // um string que recebe o ID de quem é a vez quando é verificado a vez
         private List<string> _letras = new List<string> {"A", "B", "C", "D", "E", "G", "H", "K","L", "M", "Q", "R", "T"};
-
+        private List<string> _Cartas = new List<string> {}; // Lista de cartas do jogador
         public frmLobbyDaPartida(int idSala, string IdJogador, string SenhaJogador)
         {
             InitializeComponent();
             tmrVez.Enabled = true;
             _idSala = idSala;
             _idDoJogador = IdJogador;
-
+            _senhaDoJogador = SenhaJogador;
 
             lblMostraID.Text = IdJogador;
             lblMostraSenha.Text = SenhaJogador;
@@ -53,7 +54,7 @@ namespace PI_3_Defensores_de_Hastings
                 }
                 
 
-                string senha = txtSenha.Text;
+                string senha = _senhaDoJogador;
 
                 // Inicia o jogo
                 Jogo.Iniciar(idDoJogador, senha);
@@ -174,8 +175,10 @@ namespace PI_3_Defensores_de_Hastings
                 lstbVerificarVez.Items.Add(linha);
                 string[] setorJogador = linha.Split(',');
 
-                _letras.Remove(setorJogador[1]); // remove da lista de letras o personagem que foi colocado
-
+                if (setorJogador.Length > 1)
+                {
+                    _letras.Remove(setorJogador[1]);
+                }
                 //verifica se a linha tem exatamente duas partes (setor e personagem)
                 if (setorJogador.Length == 2)
                 {
@@ -198,26 +201,88 @@ namespace PI_3_Defensores_de_Hastings
             }
 
         }
-        static int nivelAleatorio()
+        static int nivelAleatorio() // devolve uma fase de 1 - 4
         {
             Random randomNivel = new Random();
-            int nivel = randomNivel.Next(1, 4);
+            int nivel = randomNivel.Next(1, 5);
             return nivel;
+        }
+
+        static string ReturnFaseJogo(int Id) // essa função serve para retornar a fase do jogo (setup,promocão e etc).
+        {   
+            string verificacao = Jogo.VerificarVez(Id);
+            string[] atualizar = verificacao.Split('\n');
+
+            string tempPartes = atualizar[0]; // pega a primeira parte da string
+            string[] partes = tempPartes.Split(','); // divide a string em partes
+
+            //F = não começou o jogo
+
+            if(atualizar.Length > 0)
+            {
+                if (partes.Length < 5 && partes.Length > 2)
+                {
+                    return partes[3];
+                    
+                }
+                else 
+                {
+
+                    return "F"; // Retorna "F" se não houver partes suficientes
+
+                }
+            }
+            else
+            {
+                return "F"; // Retorna "F" se não houver partes suficientes
+            }
+
         }
 
         private void robo()
         {
-            Random randomLetras = new Random();
-            int indice = randomLetras.Next(_letras.Count);
-            string Personagem = _letras[indice];
+           string tempFase = ReturnFaseJogo(_idSala);
+           string Fase = tempFase.Replace("\r", "").Replace("\n","").ToUpper(); // Fase do jogo (Setup, Promoção, etc.)
 
+            MessageBox.Show(Fase);
 
-            int nivel = nivelAleatorio();
-            if (_idDoJogador == _IdDaVez)
+            if (Fase == "F") // faz nada
             {
-                colocarRobo(Personagem,nivel);     
+                MessageBox.Show("N faz nada");
+            }
+
+            if ( Fase == "S") // se a fase estiver em fase de Setup ele vai colocar os personganes
+            {
+                MessageBox.Show("Entro no S");
+                if (_idDoJogador == _IdDaVez)
+                {
+                    Random randomLetras = new Random();
+                    int indice = randomLetras.Next(_letras.Count);
+                    string Personagem = _letras[indice];
+                    int nivel = nivelAleatorio();
+                
+                    colocarRobo(Personagem, nivel);
+                    _Cartas.Add(Personagem); // Adiciona o personagem à lista de cartas do jogador
+
+                }
+            }else if (Fase == "P")
+            {
+                MessageBox.Show("Entro no P");
+                if (_idDoJogador == _IdDaVez)
+                {
+                    int jogador = Convert.ToInt32(_idDoJogador);
+                    string senha = _senhaDoJogador;
+
+                    Random randomLetras = new Random();
+                    int indice = randomLetras.Next(_Cartas.Count);
+                    string Personagem = _Cartas[indice];
+
+
+                    Jogo.Promover(jogador, senha, Personagem);
+                }
 
             }
+            
 
         }
 
@@ -249,7 +314,7 @@ namespace PI_3_Defensores_de_Hastings
         private void btnVerMapa_Click(object sender, EventArgs e)
         {
           
-            Form2 mapa = new Form2(_resultadoFinal);
+            Mapa mapa = new Mapa(_resultadoFinal);
             mapa.ShowDialog();
         }
   
@@ -299,6 +364,11 @@ namespace PI_3_Defensores_de_Hastings
             VerificarVez();
             tmrVez.Enabled = true;
 
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Fecha o formulário atual
         }
     }
 }

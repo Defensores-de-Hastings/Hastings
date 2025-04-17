@@ -8,13 +8,13 @@ using KingMeServer;
 
 namespace PI_3_Defensores_de_Hastings
 {
-    public partial class Form2 : Form
+    public partial class Mapa : Form
     {
 
         private string[] arEstadoDoJogo;
 
 
-        public Form2(string estadoDoJogo)
+        public Mapa(string estadoDoJogo)
         {
             InitializeComponent();
             arEstadoDoJogo = estadoDoJogo.Split('$');
@@ -172,27 +172,7 @@ namespace PI_3_Defensores_de_Hastings
                 MessageBox.Show("Imagem não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void PromoverPersonagem()
-        {
-            // Encontra o último personagem adicionado
-            if (pictureBox1.Controls.Count > 0)
-            {
-
-                var ultimoPersonagem = pictureBox1.Controls[pictureBox1.Controls.Count - 1];
-                int novaPosicaoY = ultimoPersonagem.Location.Y - 50;
-
-                if (novaPosicaoY < 0)
-                {
-                    novaPosicaoY = 0;
-                }
-
-                ultimoPersonagem.Location = new Point(ultimoPersonagem.Location.X, novaPosicaoY);
-            }
-            else
-            {
-                MessageBox.Show("Nenhum personagem para promover!");
-            }
-        }
+        
 
 
         private void btnColocarPerso_Click(object sender, EventArgs e)
@@ -200,16 +180,9 @@ namespace PI_3_Defensores_de_Hastings
             ColocarPesonagem();
         }
 
-
-
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            // Método vazio mantido para compatibilidade
-        }
-
-        private void btnPromover_Click(object sender, EventArgs e)
-        {
-            PromoverPersonagem();
+            this.Close(); // Fecha o formulário atual
         }
     }
 }

@@ -7,20 +7,16 @@
       "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\frmlobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\form2novo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\form2novo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|c:\\users\\willi\\downloads\\hastings\\pi_3_defensores_de_hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\frmlobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|c:\\users\\willi\\downloads\\hastings\\pi_3_defensores_de_hastings\\pi_3_defensores_de_hastings\\frmmapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmmapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|c:\\users\\willi\\downloads\\hastings\\pi_3_defensores_de_hastings\\pi_3_defensores_de_hastings\\frmmapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmmapa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,44 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmLobbyDaPartida.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
-              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
-              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
-              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T00:19:14.826Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2Novo.cs",
-              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\Form2Novo.cs",
-              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\Form2Novo.cs",
-              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\Form2Novo.cs",
-              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\Form2Novo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T22:56:00.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmLobby.cs",
-              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:45:00.889Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -76,21 +36,47 @@
               "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
               "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
               "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAmwCoBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAQwA0BAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:50:09.618Z",
+              "WhenOpened": "2025-04-17T04:16:17.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmLobby.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobby.cs",
-              "ToolTip": "C:\\Users\\Aline\\PI3\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobby.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\Aline\\PI3\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobby.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "frmLobbyDaPartida.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
+              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
+              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
+              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T16:00:18.727Z"
+              "WhenOpened": "2025-04-17T04:16:14.211Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMapa.cs",
+              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAowLgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T22:56:00.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmMapa.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmMapa.cs",
+              "ToolTip": "C:\\Users\\willi\\Downloads\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmMapa.cs [Design]",
+              "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmMapa.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T04:12:30.743Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

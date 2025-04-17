@@ -55,11 +55,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2Novo.cs">
+    <Compile Include="frmMapa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2Novo.Designer.cs">
-      <DependentUpon>Form2Novo.cs</DependentUpon>
+    <Compile Include="frmMapa.Designer.cs">
+      <DependentUpon>frmMapa.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLobby.cs">
       <SubType>Form</SubType>
@@ -85,8 +85,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2Novo.resx">
-      <DependentUpon>Form2Novo.cs</DependentUpon>
+    <EmbeddedResource Include="frmMapa.resx">
+      <DependentUpon>frmMapa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLobby.resx">
       <DependentUpon>frmLobby.cs</DependentUpon>

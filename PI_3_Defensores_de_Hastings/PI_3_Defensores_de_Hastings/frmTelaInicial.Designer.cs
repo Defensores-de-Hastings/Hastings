@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnAbrirLobby = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.lblControleVersao = new System.Windows.Forms.Label();
             this.btnCriarPartida = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,7 +41,7 @@
             this.btnAbrirLobby.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirLobby.Font = new System.Drawing.Font("Sitka Display", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnAbrirLobby.ForeColor = System.Drawing.Color.Black;
-            this.btnAbrirLobby.Location = new System.Drawing.Point(352, 421);
+            this.btnAbrirLobby.Location = new System.Drawing.Point(377, 411);
             this.btnAbrirLobby.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbrirLobby.Name = "btnAbrirLobby";
             this.btnAbrirLobby.Size = new System.Drawing.Size(227, 72);
@@ -52,18 +51,6 @@
             this.btnAbrirLobby.UseVisualStyleBackColor = false;
             this.btnAbrirLobby.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Edwardian Script ITC", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTitulo.Location = new System.Drawing.Point(267, 23);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(390, 113);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "King Me!";
-            // 
             // lblControleVersao
             // 
             this.lblControleVersao.AutoSize = true;
@@ -72,7 +59,7 @@
             this.lblControleVersao.Location = new System.Drawing.Point(876, 610);
             this.lblControleVersao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblControleVersao.Name = "lblControleVersao";
-            this.lblControleVersao.Size = new System.Drawing.Size(81, 25);
+            this.lblControleVersao.Size = new System.Drawing.Size(98, 32);
             this.lblControleVersao.TabIndex = 2;
             this.lblControleVersao.Text = "Versao";
             // 
@@ -84,7 +71,7 @@
             this.btnCriarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCriarPartida.Font = new System.Drawing.Font("Sitka Display", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.btnCriarPartida.ForeColor = System.Drawing.Color.Black;
-            this.btnCriarPartida.Location = new System.Drawing.Point(352, 251);
+            this.btnCriarPartida.Location = new System.Drawing.Point(377, 231);
             this.btnCriarPartida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCriarPartida.Name = "btnCriarPartida";
             this.btnCriarPartida.Size = new System.Drawing.Size(227, 76);
@@ -96,13 +83,12 @@
             // 
             // frmTelaInicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(934, 658);
+            this.ClientSize = new System.Drawing.Size(1004, 658);
             this.Controls.Add(this.btnCriarPartida);
             this.Controls.Add(this.lblControleVersao);
-            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnAbrirLobby);
             this.Font = new System.Drawing.Font("Sitka Display", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -118,7 +104,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAbrirLobby;
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblControleVersao;
         private System.Windows.Forms.Button btnCriarPartida;
     }

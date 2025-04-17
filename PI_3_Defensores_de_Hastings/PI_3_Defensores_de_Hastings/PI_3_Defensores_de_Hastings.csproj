@@ -145,9 +145,6 @@
     <None Include="Resources\Kelly Kiyumi.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Leonardo Takumo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Mario Toledo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tabuleiro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Fundo.Lobby.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

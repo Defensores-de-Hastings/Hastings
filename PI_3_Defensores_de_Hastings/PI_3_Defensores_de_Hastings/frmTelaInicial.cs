@@ -1,25 +1,37 @@
-﻿using System; // :) Importa o namespace System
-using System.Collections.Generic; // :) Importa o namespace para coleções genéricas
-using System.ComponentModel; // :) Importa o namespace para componentes
-using System.Data; // :) Importa o namespace para acesso a dados
-using System.Drawing; // :) Importa o namespace para manipulação gráfica
-using System.Linq; // :) Importa o namespace LINQ para consultas
-using System.Text; // :) Importa o namespace para manipulação de texto
-using System.Threading.Tasks; // :) Importa o namespace para tarefas assíncronas
-using System.Windows.Forms; // :) Importa o namespace para Windows Forms
-using KingMeServer; // :) Importa o namespace KingMeServer
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks; 
+using System.Windows.Forms;
+using KingMeServer; 
 
 namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
 {
     public partial class frmTelaInicial : Form // :) Declara a classe frmTelaInicial que herda de Form
     {
         private string versao; // :) Declara uma variável privada para armazenar a versão
-
         public frmTelaInicial() // :) Construtor da classe frmTelaInicial
         {
             InitializeComponent(); // :) Inicializa os componentes do formulário
             lblControleVersao.Text = Jogo.versao; // :) Atualiza o label lblControleVersao com a versão obtida de Jogo
+
+            string imagePath = @".\imagens\Fundo_Lobby.png";
+
+            if (System.IO.File.Exists(imagePath))
+            {
+                this.BackgroundImage = Properties.Resources;
+                this.BackgroundImageLayout = ImageLayout.Stretch; // :) imagem da tela de fundo
+            }
+            else
+            {
+                MessageBox.Show("Imagem de fundo não encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        
 
         private void Tela2_Load(object sender, EventArgs e) // :) Evento de carregamento do formulário Tela2
         {
@@ -38,5 +50,7 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             tela1.AtualizarTela(); // :) Chama o método AtualizarTela do formulário tela1
             tela1.ShowDialog(); // :) Exibe o formulário tela1 como uma caixa de diálogo modal
         }
+
+        
     }
 }

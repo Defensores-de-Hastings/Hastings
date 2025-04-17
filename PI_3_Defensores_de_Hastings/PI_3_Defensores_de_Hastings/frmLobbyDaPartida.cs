@@ -1,157 +1,127 @@
 ﻿using KingMeServer;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using System;
-
-
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Dynamic;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace PI_3_Defensores_de_Hastings
 {
     public partial class frmLobbyDaPartida : Form
     {
-        private int _idSala;
-        private string _idDoJogador;//um string que recebe o ID do jogador
-        private string _senhaDoJogador; // um string que recebe a senha do jogador
-        private string _IdDaVez; // um string que recebe o ID de quem é a vez quando é verificado a vez
-        private List<string> _letras = new List<string> {"A", "B", "C", "D", "E", "G", "H", "K","L", "M", "Q", "R", "T"};
-        private List<string> _Cartas = new List<string> {}; // Lista de cartas do jogador
-        public frmLobbyDaPartida(int idSala, string IdJogador, string SenhaJogador)
+        private readonly int _idSala;
+        private readonly string _senhaDoJogador;
+        private readonly List<string> _initialLetters = new List<string> { "A", "B", "C", "D", "E", "G", "H", "K", "L", "M", "Q", "R", "T" };
+        private List<string> _availableLetters;
+        private List<string> _playerCards;
+        private string _resultadoFinal;
+
+        // Propriedade para obter o ID do jogador como int
+        private int IdJogador => int.TryParse(lblMostraID.Text, out var id) ? id : -1;
+
+        public frmLobbyDaPartida(int idSala, string idJogador, string senhaJogador)
         {
             InitializeComponent();
-            tmrVez.Enabled = true;
             _idSala = idSala;
-            _idDoJogador = IdJogador;
-            _senhaDoJogador = SenhaJogador;
+            _senhaDoJogador = senhaJogador;
+            lblMostraID.Text = idJogador;
+            lblMostraSenha.Text = senhaJogador;
 
-            lblMostraID.Text = IdJogador;
-            lblMostraSenha.Text = SenhaJogador;
+            _availableLetters = new List<string>(_initialLetters);
+            _playerCards = new List<string>();
 
             lblEstadoJogo.Visible = false;
-            txtID.Text = lblMostraID.Text; // O ID do jogador é obtido do label
-            txtSenha.Text = lblMostraSenha.Text; // A senha é obtida do label
+            txtID.Text = idJogador;
+            txtSenha.Text = senhaJogador;
+
+            tmrVez.Tick += tmrVez_Tick;
+            tmrVez.Start();
         }
 
         private void bntComecar_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                // Validação do ID do jogador
-                if (!int.TryParse(txtID.Text, out int idDoJogador))
+                if (IdJogador < 0)
                 {
                     MessageBox.Show("ID do jogador inválido. Insira um número válido.");
                     return;
                 }
-                
 
-                string senha = _senhaDoJogador;
-
-                // Inicia o jogo
-                Jogo.Iniciar(idDoJogador, senha);
-
-                // Lista as cartas do jogador
-                string cartas = Jogo.ListarCartas(idDoJogador, senha);
-                txtCartas.Text = cartas;  // Exibe as iniciais das cartas
-
-                // Obtém a lista de personagens
-                string retorno = Jogo.ListarPersonagens();
-                retorno = retorno.Replace("\r", "").Trim();
-                string[] partidas = retorno.Split(new[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-                Dictionary<string, string> personagensDict = new Dictionary<string, string>
-                {
-                    { "A", "Adilson Konrad" }, { "B", "Beatriz Paiva" }, { "C", "Claro" }, { "D", "Douglas Baquiao" },
-                    { "E", "Eduardo Takeo" }, { "G", "Guilherme Rey" }, { "H", "Heredia" }, { "K", "Karin" },
-                    { "L", "Leonardo Takuno" }, { "M", "Mario Toledo" }, { "Q", "Quintas" }, { "R", "Ranulffo" },
-                    { "T", "Toshio" }
-                };
-
-                lstbPersonagens.Items.Clear();
-
-                foreach (string codigo in partidas)
-                {
-                    string codigoTrimmed = codigo.Trim();
-                    lstbPersonagens.Items.Add(personagensDict.ContainsKey(codigoTrimmed) ? personagensDict[codigoTrimmed] : codigoTrimmed);
-                }
-
-                // Associar cartas com seus respectivos nomes no ListBox TXBCartas
-                TXBCartas.Items.Clear();
-                foreach (char letra in cartas)
-                {
-                    string letraStr = letra.ToString();
-                    TXBCartas.Items.Add(personagensDict.ContainsKey(letraStr) ? personagensDict[letraStr] : letraStr);
-                }
+                Jogo.Iniciar(IdJogador, _senhaDoJogador);
+                ExibirCartas();
+                ExibirPersonagens();
+                ExibirSetores();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
-            
-            string tempSetores = Jogo.ListarSetores();
-            string[] setores = tempSetores.Split('\r');
+        }
 
-            lstbSetores.Items.Clear();
-            for (int i = 0; i < setores.Length; i++)
+        private void ExibirCartas()
+        {
+            var cartas = Jogo.ListarCartas(IdJogador, _senhaDoJogador);
+            txtCartas.Text = cartas;
+            var dict = GetPersonagensDict();
+            TXBCartas.Items.Clear();
+            foreach (var letra in cartas)
             {
-                lstbSetores.Items.Add(setores[i]);
+                var key = letra.ToString();
+                TXBCartas.Items.Add(dict.ContainsKey(key) ? dict[key] : key);
+                _playerCards.Add(key);
             }
+        }
+
+        private void ExibirPersonagens()
+        {
+            var retorno = Jogo.ListarPersonagens().Replace("\r", "").Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            var dict = GetPersonagensDict();
+            lstbPersonagens.Items.Clear();
+            foreach (var codigo in retorno)
+            {
+                var key = codigo.Trim();
+                lstbPersonagens.Items.Add(dict.ContainsKey(key) ? dict[key] : key);
+            }
+        }
+
+        private void ExibirSetores()
+        {
+            var setores = Jogo.ListarSetores().Split(new[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            lstbSetores.Items.Clear();
+            foreach (var setor in setores)
+                lstbSetores.Items.Add(setor);
+        }
+
+        private Dictionary<string, string> GetPersonagensDict() => new Dictionary<string, string>
+        {
+            { "A", "Adilson Konrad" }, { "B", "Beatriz Paiva" }, { "C", "Claro" }, { "D", "Douglas Baquiao" },
+            { "E", "Eduardo Takeo" }, { "G", "Guilherme Rey" }, { "H", "Heredia" }, { "K", "Karin" },
+            { "L", "Leonardo Takuno" }, { "M", "Mario Toledo" }, { "Q", "Quintas" }, { "R", "Ranulffo" },
+            { "T", "Toshio" }
+        };
+
+        private void ColocarPersonagem(int setor, string personagem)
+        {
+            var estado = Jogo.ColocarPersonagem(IdJogador, _senhaDoJogador, setor, personagem);
+            lstEstadoDoJogo.Items.Clear();
+            foreach (var linha in estado.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries))
+                lstEstadoDoJogo.Items.Add(linha);
         }
 
         private void btnColocarPersonagem_Click(object sender, EventArgs e)
         {
-            Colocar();
+            if (int.TryParse(txtEscolheSetor.Text, out int setor))
+                ColocarPersonagem(setor, txtEscolhaPersonagem.Text);
+            else
+                MessageBox.Show("Setor inválido.");
         }
 
-        private string _resultadoFinal; // Variável de instância para armazenar o resultado
-        private void Colocar()
-        {
-            string senha = txtSenha.Text;
-            string TempSetor = txtEscolheSetor.Text;
-            int setor = Convert.ToInt32(TempSetor);
-            string personagem = txtEscolhaPersonagem.Text;
-            string TempIdJogador = lblMostraID.Text;
-            int IdJogador = Convert.ToInt32(TempIdJogador);
-
-            string estadoDoJogo = Jogo.ColocarPersonagem(IdJogador, senha, setor, personagem);
-
-            string[] linhas = estadoDoJogo.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            lstEstadoDoJogo.Items.Clear();
-            
-            
-            List<string> linhasFormatadas = new List<string>();
-
-            foreach (string linha in linhas)
-            {  
-                lstEstadoDoJogo.Items.Add(linha);
-            }
-            
-        }
-
-       
         private void btnListarJogadores_Click(object sender, EventArgs e)
         {
-            string ID = Jogo.ListarJogadores(_idSala);
-            ID = ID.Replace("\r", "");
-            string[] jogadores = ID.Split('\n');
-
+            var jogadores = Jogo.ListarJogadores(_idSala).Replace("\r", "").Split('\n');
             lstbJogadores.Items.Clear();
-            for (int i = 0; i < jogadores.Length; i++)
-            {
-                lstbJogadores.Items.Add(jogadores[i]);
-            }
+            lstbJogadores.Items.AddRange(jogadores);
         }
-
-        
 
         private void btnVerificarVez_Click(object sender, EventArgs e)
         {
@@ -160,171 +130,67 @@ namespace PI_3_Defensores_de_Hastings
 
         private void VerificarVez()
         {
-            //obtém a string de verificação do jogo
-            string verificacao = Jogo.VerificarVez(_idSala);
+            var verificacao = Jogo.VerificarVez(_idSala).Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            lstbVerificarVez.Items.Clear();
+            var linhasFormatadas = new List<string>();
 
-
-            List<string> linhasFormatadas = new List<string>();
-
-            string[] atualizar = verificacao.Split('\n');
-
-            lstbVerificarVez.Items.Clear(); //limpa o ListBox antes de adicionar novos itens
-
-            foreach (string linha in atualizar)
+            foreach (var linha in verificacao)
             {
                 lstbVerificarVez.Items.Add(linha);
-                string[] setorJogador = linha.Split(',');
-
-                if (setorJogador.Length > 1)
+                var partes = linha.Split(',');
+                if (partes.Length == 2)
                 {
-                    _letras.Remove(setorJogador[1]);
+                    _availableLetters.Remove(partes[1]);
+                    linhasFormatadas.Add(linha);
                 }
-                //verifica se a linha tem exatamente duas partes (setor e personagem)
-                if (setorJogador.Length == 2)
-                {
-                    //formata a linha no formato 'setor,personagem'
-                    string linhaFormatada = $"{setorJogador[0]},{setorJogador[1]}";
-                    linhasFormatadas.Add(linhaFormatada);
-                }
-
-
             }
-            //junta todas as linhas formatadas em uma única string, separadas por aspas simples
+
             _resultadoFinal = string.Join("$", linhasFormatadas);
-
-            //se desejar continuar exibindo apenas a vez em lblMostraVez:
-            string[] partes = verificacao.Split(',');
-            if (partes.Length > 0)
-            {
-                _IdDaVez = partes[0]; // atualizar a string de quem é a vez
-                lblMostraVez.Text = partes[0]; // mostra em uma label de quem é a vez
-            }
-
+            lblMostraVez.Text = verificacao.FirstOrDefault()?.Split(',')[0] ?? string.Empty;
         }
-        static int nivelAleatorio() // devolve uma fase de 1 - 4
+
+        private void tmrVez_Tick(object sender, EventArgs e)
         {
-            Random randomNivel = new Random();
-            int nivel = randomNivel.Next(1, 5);
-            return nivel;
-        }
-
-        static string ReturnFaseJogo(int Id) // essa função serve para retornar a fase do jogo (setup,promocão e etc).
-        {   
-            string verificacao = Jogo.VerificarVez(Id);
-            string[] atualizar = verificacao.Split('\n');
-
-            string tempPartes = atualizar[0]; // pega a primeira parte da string
-            string[] partes = tempPartes.Split(','); // divide a string em partes
-
-            //F = não começou o jogo
-
-            if(atualizar.Length > 0)
-            {
-                if (partes.Length < 5 && partes.Length > 2)
-                {
-                    return partes[3];
-                    
-                }
-                else 
-                {
-
-                    return "F"; // Retorna "F" se não houver partes suficientes
-
-                }
-            }
-            else
-            {
-                return "F"; // Retorna "F" se não houver partes suficientes
-            }
-
+            tmrVez.Stop();
+            VerificarVez();
+            robo();
+            VerificarVez();
+            tmrVez.Start();
         }
 
         private void robo()
         {
-           string tempFase = ReturnFaseJogo(_idSala);
-           string Fase = tempFase.Replace("\r", "").Replace("\n","").ToUpper(); // Fase do jogo (Setup, Promoção, etc.)
-
-            MessageBox.Show(Fase);
-
-            if (Fase == "F") // faz nada
+            var fase = ReturnFaseJogo(_idSala);
+            if (fase == "S" && lblMostraID.Text == lblMostraVez.Text && _availableLetters.Any())
             {
-                MessageBox.Show("N faz nada");
+                var person = _availableLetters[new Random().Next(_availableLetters.Count)];
+                var nivel = new Random().Next(1, 5);
+                ColocarPersonagem(nivel, person);
+                _playerCards.Add(person);
             }
-
-            if ( Fase == "S") // se a fase estiver em fase de Setup ele vai colocar os personganes
+            else if (fase == "P" && lblMostraID.Text == lblMostraVez.Text && _playerCards.Any())
             {
-                MessageBox.Show("Entro no S");
-                if (_idDoJogador == _IdDaVez)
-                {
-                    Random randomLetras = new Random();
-                    int indice = randomLetras.Next(_letras.Count);
-                    string Personagem = _letras[indice];
-                    int nivel = nivelAleatorio();
-                
-                    colocarRobo(Personagem, nivel);
-                    _Cartas.Add(Personagem); // Adiciona o personagem à lista de cartas do jogador
-
-                }
-            }else if (Fase == "P")
-            {
-                MessageBox.Show("Entro no P");
-                if (_idDoJogador == _IdDaVez)
-                {
-                    int jogador = Convert.ToInt32(_idDoJogador);
-                    string senha = _senhaDoJogador;
-
-                    Random randomLetras = new Random();
-                    int indice = randomLetras.Next(_Cartas.Count);
-                    string Personagem = _Cartas[indice];
-
-
-                    Jogo.Promover(jogador, senha, Personagem);
-                }
-
+                var person = _playerCards[new Random().Next(_playerCards.Count)];
+                Jogo.Promover(IdJogador, _senhaDoJogador, person);
             }
-            
-
         }
 
-   
-
-        private void colocarRobo(string person, int nivel)
+        static string ReturnFaseJogo(int Id)
         {
-            string senha = txtSenha.Text;
-            int setor = nivel;
-            string personagem = person;
-            string TempIdJogador = lblMostraID.Text;
-            int IdJogador = Convert.ToInt32(TempIdJogador);
-
-            string estadoDoJogo = Jogo.ColocarPersonagem(IdJogador, senha, setor, personagem);
-
-            string[] linhas = estadoDoJogo.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            lstEstadoDoJogo.Items.Clear();
-
-
-            List<string> linhasFormatadas = new List<string>();
-
-            foreach (string linha in linhas)
-            {
-                lstEstadoDoJogo.Items.Add(linha);
-            }
+            var firstLine = Jogo.VerificarVez(Id).Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+            var partes = firstLine?.Split(',') ?? new string[0];
+            return (partes.Length >= 4 ? partes[3] : "F").ToUpper();
         }
-
 
         private void btnVerMapa_Click(object sender, EventArgs e)
         {
-          
-            Mapa mapa = new Mapa(_resultadoFinal);
-            mapa.ShowDialog();
+            new Mapa(_resultadoFinal).ShowDialog();
         }
-  
+
         private void btnVotar_Click(object sender, EventArgs e)
         {
-            int jogador = Convert.ToInt32(txtID.Text);
-            string senha = lblMostraSenha.Text;
-            string voto = txtVoto.Text; // Assumindo que há um campo para capturar o voto
-
-            Jogo.Votar(jogador, senha, voto);
+            int jogador = IdJogador;
+            Jogo.Votar(jogador, _senhaDoJogador, txtVoto.Text);
         }
 
         private void btnPromover_Click(object sender, EventArgs e)
@@ -334,41 +200,30 @@ namespace PI_3_Defensores_de_Hastings
 
         private void promover()
         {
-            int jogador = Convert.ToInt32(txtID.Text);
-            string senha = txtSenha.Text;
-            string promocao = txtEscolhaPersonagem.Text;
-
-            Jogo.Promover(jogador, senha, promocao);
+            int jogador = IdJogador;
+            Jogo.Promover(jogador, _senhaDoJogador, txtEscolhaPersonagem.Text);
         }
 
         private void lblColocarSetor_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblEscolhaPersonagem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lstbSetores_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void tmrVez_Tick(object sender, EventArgs e)
-        {
-            tmrVez.Enabled = false;
-            VerificarVez();
-            robo();
-            VerificarVez();
-            tmrVez.Enabled = true;
-
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close(); // Fecha o formulário atual
+            Close();
+        }
+
+        private void lstbVerificarVez_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

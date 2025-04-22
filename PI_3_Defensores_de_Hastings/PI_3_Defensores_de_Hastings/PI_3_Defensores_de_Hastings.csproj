@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormComoJogar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormComoJogar.Designer.cs">
+      <DependentUpon>FormComoJogar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMapa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormComoJogar.resx">
+      <DependentUpon>FormComoJogar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMapa.resx">
       <DependentUpon>frmMapa.cs</DependentUpon>
@@ -160,7 +169,8 @@
     <None Include="Resources\tabuleiro.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Fundo.Lobby.png" />
+    <None Include="Resources\Fundo_Lobby.png" />
+    <None Include="Resources\Leonardo Takuno.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

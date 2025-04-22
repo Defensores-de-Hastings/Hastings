@@ -19,11 +19,11 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             InitializeComponent(); // :) Inicializa os componentes do formulário
             lblControleVersao.Text = Jogo.versao; // :) Atualiza o label lblControleVersao com a versão obtida de Jogo
 
-            string imagePath = @".\imagens\Fundo_Lobby.png";
+            string imagePath = @"C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\Resources\Fundo_Lobby.png";
 
             if (System.IO.File.Exists(imagePath))
             {
-                this.BackgroundImage = Properties.Resources;
+                this.BackgroundImage = Image.FromFile(imagePath);
                 this.BackgroundImageLayout = ImageLayout.Stretch; // :) imagem da tela de fundo
             }
             else
@@ -51,6 +51,16 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             tela1.ShowDialog(); // :) Exibe o formulário tela1 como uma caixa de diálogo modal
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComoJogar_Click(object sender, EventArgs e)
+        {
+            FrmComoJogar comoJogar = new FrmComoJogar();
+            comoJogar.ShowDialog();
+            
+        }
     }
 }

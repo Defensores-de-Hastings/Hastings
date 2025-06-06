@@ -133,6 +133,9 @@
   <data name="Eduardo_Takeo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Eduardo Takeo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fundo_Lobby" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fundo_Lobby.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Guilherme_Rey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Guilherme Rey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,8 @@
   <data name="Kelly_Kiyumi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kelly Kiyumi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Leonardo_Takumo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Leonardo Takumo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Leonardo_Takuno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Leonardo Takuno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mario_Toledo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mario Toledo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

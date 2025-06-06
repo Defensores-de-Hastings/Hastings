@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPartidas = new System.Windows.Forms.DataGridView();
             this.btnEntrarPartida = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -39,26 +39,25 @@
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.tmrVerificarPartida = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPartidas
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPartidas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPartidas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPartidas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvPartidas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidas.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvPartidas.Location = new System.Drawing.Point(14, 18);
+            this.dgvPartidas.Location = new System.Drawing.Point(13, 13);
             this.dgvPartidas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPartidas.Name = "dgvPartidas";
             this.dgvPartidas.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.dgvPartidas.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.dgvPartidas.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPartidas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvPartidas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPartidas.Size = new System.Drawing.Size(584, 623);
@@ -112,7 +111,6 @@
             this.txtbNomeDoJogador.Name = "txtbNomeDoJogador";
             this.txtbNomeDoJogador.Size = new System.Drawing.Size(266, 22);
             this.txtbNomeDoJogador.TabIndex = 17;
-            this.txtbNomeDoJogador.TextChanged += new System.EventHandler(this.txtbNomeDoJogador_TextChanged);
             // 
             // lblSenha
             // 
@@ -143,15 +141,6 @@
             this.tmrVerificarPartida.Interval = 5000;
             this.tmrVerificarPartida.Tick += new System.EventHandler(this.tmrVerificarPartida_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
-            // 
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
@@ -169,7 +158,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1011, 658);
             this.Controls.Add(this.lblTimer);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbSenhaDaSala);
             this.Controls.Add(this.txtbNomeDoJogador);
             this.Controls.Add(this.lblSenha);
@@ -200,7 +188,6 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblNomeJogador;
         private System.Windows.Forms.Timer tmrVerificarPartida;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTimer;
     }
 }

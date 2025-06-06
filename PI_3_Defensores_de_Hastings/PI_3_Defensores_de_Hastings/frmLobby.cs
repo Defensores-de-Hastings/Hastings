@@ -93,30 +93,9 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             tmrVerificarPartida.Enabled = true;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) // :) Evento de alteração de texto no textBox1
-        {
-            // :) Método vazio, sem implementação
-        }
+       
 
-        private void textBox2_TextChanged(object sender, EventArgs e) // :) Evento de alteração de texto no textBox2
-        {
-            // :) Método vazio, sem implementação
-        }
-
-        private void label1_Click(object sender, EventArgs e) // :) Evento de clique no label1
-        {
-            // :) Método vazio, sem implementação
-        }
-
-        private void lsb_SelectedIndexChanged(object sender, EventArgs e) // :) Evento de alteração de seleção no ListBox (lsb)
-        {
-            // :) Método vazio, sem implementação
-        }
-
-        private void txtbNomeDoJogador_TextChanged(object sender, EventArgs e) // :) Evento de alteração de texto no txtbNomeDoJogador
-        {
-            // :) Método vazio, sem implementação
-        }
+    
 
     }
 }

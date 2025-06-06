@@ -43,7 +43,6 @@ C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de
 C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmLobby.resources
 C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmLobbyDaPartida.resources
 C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmTelaInicial.resources
-C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Form2.resources
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.exe.config
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.exe
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.pdb
@@ -61,3 +60,23 @@ C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hasti
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Def.94BA8437.Up2Date
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.exe
 C:\Users\Aline\PI3\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.pdb
+C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Mapa.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.exe.config
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.exe
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\PI_3_Defensores_de_Hastings.pdb
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\KingMeServer.dll
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\bin\Debug\KingMeServer.xml
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.csproj.AssemblyReference.cache
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Form1.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Mapa.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmLobby.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmLobbyDaPartida.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Properties.Resources.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.frmTelaInicial.resources
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.csproj.GenerateResource.cache
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.csproj.CoreCompileInputs.cache
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Def.94BA8437.Up2Date
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.exe
+C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.pdb
+C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Mapa.resources
+C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.FrmComoJogar.resources

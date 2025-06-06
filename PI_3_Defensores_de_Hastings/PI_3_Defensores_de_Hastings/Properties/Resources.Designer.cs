@@ -113,6 +113,16 @@ namespace PI_3_Defensores_de_Hastings.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fundo_Lobby {
+            get {
+                object obj = ResourceManager.GetObject("Fundo_Lobby", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guilherme_Rey {
             get {
                 object obj = ResourceManager.GetObject("Guilherme_Rey", resourceCulture);
@@ -143,9 +153,9 @@ namespace PI_3_Defensores_de_Hastings.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Leonardo_Takumo {
+        internal static System.Drawing.Bitmap Leonardo_Takuno {
             get {
-                object obj = ResourceManager.GetObject("Leonardo_Takumo", resourceCulture);
+                object obj = ResourceManager.GetObject("Leonardo_Takuno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

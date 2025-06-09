@@ -1,31 +1,31 @@
-﻿using System; // :) Importa o namespace System
-using System.Collections.Generic; // :) Importa o namespace para coleções genéricas
-using System.ComponentModel; // :) Importa o namespace para componentes
-using System.Data; // :) Importa o namespace para acesso a dados
-using System.Drawing; // :) Importa o namespace para manipulação gráfica
-using System.Linq; // :) Importa o namespace LINQ para consultas
-using System.Text; // :) Importa o namespace para manipulação de texto
-using System.Threading.Tasks; // :) Importa o namespace para tarefas assíncronas
-using System.Windows.Forms; // :) Importa o namespace para Windows Forms
-using KingMeServer; // :) Importa o namespace KingMeServer
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing; 
+using System.Linq; 
+using System.Text;
+using System.Threading.Tasks; 
+using System.Windows.Forms;
+using KingMeServer;
 
-namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
+namespace PI_3_Defensores_de_Hastings 
 {
-    public partial class frmLobby : Form // :) Declara a classe frmLobby que herda de Form
+    public partial class frmLobby : Form 
     {
-        public frmLobby() // :) Construtor da classe frmLobby
+        public frmLobby()
         {
-            InitializeComponent(); // :) Inicializa os componentes do formulário
+            InitializeComponent(); 
             ListarPartidas();
             tmrVerificarPartida.Enabled = false;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // :) Evento de clique em uma célula do DataGridView
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) 
         {
-            // :) Método vazio, sem implementação
+            //Método vazio, sem implementação
         }
 
-        private void btnEntrarPartida_Click(object sender, EventArgs e) // :) Evento de clique do botão Entrar Partida
+        private void btnEntrarPartida_Click(object sender, EventArgs e) 
         {
             string nomeJogador = txtbNomeDoJogador.Text.Trim(); // :) Obtém e remove espaços em branco do nome do jogador
             string senhaSala = txtbSenhaDaSala.Text.Trim(); // :) Obtém e remove espaços em branco da senha da sala
@@ -33,21 +33,21 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             if (string.IsNullOrEmpty(nomeJogador)) // :) Verifica se o nome do jogador está vazio
             {
                 MessageBox.Show("Insira o seu nome: ", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error); // :) Exibe mensagem de erro
-                return; // :) Encerra a execução do método
+                return; 
             }
             if (string.IsNullOrEmpty(senhaSala)) // :) Verifica se a senha da sala está vazia
             {
                 MessageBox.Show("Insira a sua senha: ", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error); // :) Exibe mensagem de erro
-                return; // :) Encerra a execução do método
+                return; 
             }
             if (dgvPartidas.SelectedRows.Count == 0) // :) Verifica se nenhuma partida foi selecionada
             {
                 MessageBox.Show("Selecione uma partida: ", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error); // :) Exibe mensagem de erro
-                return; // :) Encerra a execução do método
+                return; 
             }
 
             Partida match = (Partida)dgvPartidas.SelectedRows[0].DataBoundItem; // :) Obtém a partida selecionada
-            int idSala = match.id; // :) Obtém o ID da sala da partida selecionada
+            int idSala = match.id; 
 
             string idJogadorInfo = Jogo.Entrar(idSala, nomeJogador, senhaSala); // :) Tenta entrar na partida e obtém as informações do jogador
             string[] info = idJogadorInfo.Split(','); // :) Separa as informações do jogador utilizando a vírgula
@@ -55,7 +55,7 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             if (info.Length < 2) // :) Verifica se as informações obtidas são suficientes
             {
                 MessageBox.Show("Erro ao entrar na partida. Verifique as credenciais.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error); // :) Exibe mensagem de erro
-                return; // :) Encerra a execução do método
+                return; 
             }
 
             string idJogador = info[0]; // :) Obtém o ID do jogador
@@ -67,23 +67,23 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
 
         private void btnVoltar_Click(object sender, EventArgs e) // :) Evento de clique do botão Voltar
         {
-            this.Close(); // :) Fecha o formulário atual
+            this.Close();
         }
 
         private void ListarPartidas()
         {
-            dgvPartidas.DataSource = Partida.ListarPartidas(); // :) Define a fonte de dados do DataGridView com a lista de partidas
+            dgvPartidas.DataSource = Partida.ListarPartidas();
 
-            dgvPartidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // :) Define a seleção para linhas inteiras
-            dgvPartidas.EditMode = DataGridViewEditMode.EditProgrammatically; // :) Define o modo de edição para ser feito programaticamente
-            dgvPartidas.AllowUserToResizeRows = false; // :) Impede que o usuário redimensione as linhas
-            dgvPartidas.AllowUserToResizeColumns = false; // :) Impede que o usuário redimensione as colunas
-            dgvPartidas.RowHeadersVisible = false; // :) Oculta os cabeçalhos das linhas
-            dgvPartidas.MultiSelect = false; // :) Permite a seleção de apenas uma linha
+            dgvPartidas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPartidas.EditMode = DataGridViewEditMode.EditProgrammatically; 
+            dgvPartidas.AllowUserToResizeRows = false; 
+            dgvPartidas.AllowUserToResizeColumns = false;
+            dgvPartidas.RowHeadersVisible = false; 
+            dgvPartidas.MultiSelect = false;
 
-            dgvPartidas.Columns[0].Visible = true; // :) Torna visível a primeira coluna
-            dgvPartidas.Columns[1].HeaderText = "Nome da Partida"; // :) Define o texto do cabeçalho da segunda coluna
-            dgvPartidas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // :) Configura a segunda coluna para preencher o espaço disponível
+            dgvPartidas.Columns[0].Visible = true; 
+            dgvPartidas.Columns[1].HeaderText = "Nome da Partida"; 
+            dgvPartidas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
         }
 
         private void tmrVerificarPartida_Tick(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
 
         private void bntAtualizar_Click(object sender, EventArgs e)
         {
-            ListarPartidas(); // :) Chama o método para listar as partidas disponíveis
+            ListarPartidas();
         }
     }
 }

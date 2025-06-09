@@ -14,7 +14,7 @@ namespace PI_3_Defensores_de_Hastings
         private List<string> _availableLetters;
         private List<string> _playerCards;
         private string _resultadoFinal;
-
+        private int Contador = 0;
         // Propriedade para obter o ID do jogador como int
         private int IdJogador => int.TryParse(lblMostraID.Text, out var id) ? id : -1;
 
@@ -176,11 +176,35 @@ namespace PI_3_Defensores_de_Hastings
 
             if (fase == "S"&& lblMostraID.Text == lblMostraVez.Text && _availableLetters.Any())
             {
-                
+                int setor = 0;
+
+                if (Contador >= 0 && Contador <= 3)
+                {
+                    setor = 4;
+                    Contador++;
+                } else if (Contador >= 4 && Contador <= 7)
+                {
+                    setor = 3;
+                    Contador++;
+                }
+                else if (Contador >= 8 && Contador <= 12)
+                {
+                    setor = 2;
+                    Contador++;
+                }
+                else if (Contador >= 12 && Contador <= 16)
+                {
+                    setor = 1;
+                    Contador++;
+                }
+
                 var person = _availableLetters[new Random().Next(_availableLetters.Count)];
                 var nivel = new Random().Next(1, 5);
                 ColocarPersonagem(nivel, person);
                 _playerCards.Add(person);
+
+              
+
             }
             else if (fase == "P" && lblMostraID.Text == lblMostraVez.Text && _playerCards.Any())
             {

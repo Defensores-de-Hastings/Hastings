@@ -9,22 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KingMeServer; 
 
-namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
+namespace PI_3_Defensores_de_Hastings 
 {
-    public partial class frmTelaInicial : Form // :) Declara a classe frmTelaInicial que herda de Form
+    public partial class frmTelaInicial : Form 
     {
-        private string versao; // :) Declara uma variável privada para armazenar a versão
-        public frmTelaInicial() // :) Construtor da classe frmTelaInicial
+        private string versao; 
+        public frmTelaInicial() 
         {
-            InitializeComponent(); // :) Inicializa os componentes do formulário
-            lblControleVersao.Text = Jogo.versao; // :) Atualiza o label lblControleVersao com a versão obtida de Jogo
+            InitializeComponent(); 
+            lblControleVersao.Text = Jogo.versao; 
 
             string imagePath = @"C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\Resources\Fundo_Lobby.png";
 
             if (System.IO.File.Exists(imagePath))
             {
                 this.BackgroundImage = Image.FromFile(imagePath);
-                this.BackgroundImageLayout = ImageLayout.Stretch; // :) imagem da tela de fundo
+                this.BackgroundImageLayout = ImageLayout.Stretch; 
             }
             else
             {
@@ -33,17 +33,17 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
         }
         
 
-        private void Tela2_Load(object sender, EventArgs e) // :) Evento de carregamento do formulário Tela2
+        private void Tela2_Load(object sender, EventArgs e)
         {
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e) // :) Evento de clique do botão btnVoltar
+        private void btnVoltar_Click(object sender, EventArgs e) 
         {
-            frmLobby lobby = new frmLobby(); // :) Cria uma nova instância do formulário frmLobby
-            lobby.ShowDialog(); // :) Exibe o formulário frmLobby como uma caixa de diálogo modal
+            frmLobby lobby = new frmLobby(); 
+            lobby.ShowDialog();
         }
 
-        private void btnCriarPartida_Click(object sender, EventArgs e) // :) Evento de clique do botão btnCriarPartida
+        private void btnCriarPartida_Click(object sender, EventArgs e) 
         {
             Form1 tela1 = new Form1(); // :) Cria uma nova instância do formulário Form1
             tela1.versao = this.versao; // :) Atribui a versão do formulário atual à propriedade versao de tela1

@@ -80,3 +80,4 @@ C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Def
 C:\Users\fernando.barreto\OneDrive - Solutta\Documentos\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.pdb
 C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.Mapa.resources
 C:\Users\João Michael\Documents\GitHub\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.FrmComoJogar.resources
+C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\obj\Debug\PI_3_Defensores_de_Hastings.FrmComoJogar.resources

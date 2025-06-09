@@ -33,8 +33,8 @@ namespace PI_3_Defensores_de_Hastings
             txtID.Text = idJogador;
             txtSenha.Text = senhaJogador;
 
-            tmrVez.Tick += tmrVez_Tick;
-            tmrVez.Start();
+            
+            tmrVez.Enabled = true;
         }
 
         private void bntComecar_Click(object sender, EventArgs e)
@@ -151,18 +151,32 @@ namespace PI_3_Defensores_de_Hastings
 
         private void tmrVez_Tick(object sender, EventArgs e)
         {
-            tmrVez.Stop();
-            VerificarVez();
-            robo();
-            VerificarVez();
-            tmrVez.Start();
+
+            tmrVez.Enabled = false;
+            try
+            {
+                VerificarVez();
+                robo();
+                VerificarVez();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no timer: " + ex.Message);
+            }
+            finally
+            {
+                tmrVez.Enabled = true;
+            }
         }
 
         private void robo()
         {
-            var fase = ReturnFaseJogo(_idSala);
-            if (fase == "S" && lblMostraID.Text == lblMostraVez.Text && _availableLetters.Any())
+            string fase = ReturnFaseJogo(_idSala);
+            //MessageBox.Show(fase);
+
+            if (fase == "S"&& lblMostraID.Text == lblMostraVez.Text && _availableLetters.Any())
             {
+                
                 var person = _availableLetters[new Random().Next(_availableLetters.Count)];
                 var nivel = new Random().Next(1, 5);
                 ColocarPersonagem(nivel, person);
@@ -170,16 +184,43 @@ namespace PI_3_Defensores_de_Hastings
             }
             else if (fase == "P" && lblMostraID.Text == lblMostraVez.Text && _playerCards.Any())
             {
+                
                 var person = _playerCards[new Random().Next(_playerCards.Count)];
                 Jogo.Promover(IdJogador, _senhaDoJogador, person);
             }
+            else if (fase == "V" && lblMostraID.Text == lblMostraVez.Text)
+            {
+                
+                string voto = votar();
+
+                Jogo.Votar(IdJogador, _senhaDoJogador, voto);
+            }
         }
 
-        static string ReturnFaseJogo(int Id)
+        static string votar()
+        {
+            int voto = new Random().Next(1, 3);
+
+            if (voto == 1)
+            {
+                return "S";
+
+            }
+            else if (voto == 2)
+            {
+                return "N";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+
+            static string ReturnFaseJogo(int Id)
         {
             var firstLine = Jogo.VerificarVez(Id).Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
             var partes = firstLine?.Split(',') ?? new string[0];
-            return (partes.Length >= 4 ? partes[3] : "F").ToUpper();
+            return (partes.Length >= 4 ? partes[3] : "F").ToUpper().Trim();
         }
 
         private void btnVerMapa_Click(object sender, EventArgs e)
@@ -224,6 +265,12 @@ namespace PI_3_Defensores_de_Hastings
         private void lstbVerificarVez_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string fase = ReturnFaseJogo(_idSala);
+            MessageBox.Show(fase);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace PI_3_Defensores_de_Hastings
                     continue;
                 }
      
-                string caminhoImagem = Path.Combine(@".\imagens\Personagens", nomeArquivo);
+                string caminhoImagem = Path.Combine(@"C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\Resources", nomeArquivo);
 
                 if (!File.Exists(caminhoImagem))
                 {
@@ -155,7 +155,7 @@ namespace PI_3_Defensores_de_Hastings
 
         private void CarregarImagem()
         {
-            string imagePath = @".\imagens\tabuleiro.jpg";
+            string imagePath = @"C:\Users\willi\Downloads\Hastings\PI_3_Defensores_de_Hastings\PI_3_Defensores_de_Hastings\Resources\tabuleiro.jpg";
 
             if (File.Exists(imagePath))
             {

@@ -16,7 +16,8 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
         public frmLobby() // :) Construtor da classe frmLobby
         {
             InitializeComponent(); // :) Inicializa os componentes do formulário
-            tmrVerificarPartida.Enabled = true;
+            ListarPartidas();
+            tmrVerificarPartida.Enabled = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // :) Evento de clique em uma célula do DataGridView
@@ -93,9 +94,9 @@ namespace PI_3_Defensores_de_Hastings // :) Define o namespace da aplicação
             tmrVerificarPartida.Enabled = true;
         }
 
-       
-
-    
-
+        private void bntAtualizar_Click(object sender, EventArgs e)
+        {
+            ListarPartidas(); // :) Chama o método para listar as partidas disponíveis
+        }
     }
 }

@@ -371,9 +371,9 @@
             this.btnVerMapa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVerMapa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerMapa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerMapa.Location = new System.Drawing.Point(811, 216);
+            this.btnVerMapa.Location = new System.Drawing.Point(667, 257);
             this.btnVerMapa.Name = "btnVerMapa";
-            this.btnVerMapa.Size = new System.Drawing.Size(143, 67);
+            this.btnVerMapa.Size = new System.Drawing.Size(136, 44);
             this.btnVerMapa.TabIndex = 30;
             this.btnVerMapa.Text = "Ver Mapa";
             this.btnVerMapa.UseVisualStyleBackColor = false;
@@ -496,7 +496,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(935, 442);
+            this.button1.Location = new System.Drawing.Point(971, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 42;

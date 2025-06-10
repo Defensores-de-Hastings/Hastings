@@ -147,6 +147,11 @@ namespace PI_3_Defensores_de_Hastings
 
             _resultadoFinal = string.Join("$", linhasFormatadas);
             lblMostraVez.Text = verificacao.FirstOrDefault()?.Split(',')[0] ?? string.Empty;
+
+            
+            
+
+
         }
 
         private void tmrVez_Tick(object sender, EventArgs e)
@@ -176,30 +181,10 @@ namespace PI_3_Defensores_de_Hastings
 
             if (fase == "S"&& lblMostraID.Text == lblMostraVez.Text && _availableLetters.Any())
             {
-                int setor = 0;
-
-                if (Contador >= 0 && Contador <= 3)
-                {
-                    setor = 4;
-                    Contador++;
-                } else if (Contador >= 4 && Contador <= 7)
-                {
-                    setor = 3;
-                    Contador++;
-                }
-                else if (Contador >= 8 && Contador <= 12)
-                {
-                    setor = 2;
-                    Contador++;
-                }
-                else if (Contador >= 12 && Contador <= 16)
-                {
-                    setor = 1;
-                    Contador++;
-                }
+                
 
                 var person = _availableLetters[new Random().Next(_availableLetters.Count)];
-                var nivel = new Random().Next(1, 5);
+                var nivel = new Random().Next(2, 4);
                 ColocarPersonagem(nivel, person);
                 _playerCards.Add(person);
 
@@ -223,22 +208,20 @@ namespace PI_3_Defensores_de_Hastings
 
         static string votar()
         {
-            int voto = new Random().Next(1, 3);
-
-            if (voto == 1)
-            {
-                return "S";
-
-            }
-            else if (voto == 2)
-            {
+            int voto = new Random().Next(1, 5);
+            if (voto % 2 == 0) {
                 return "N";
+            }else if (voto % 2 != 0) { 
+                return "S"; 
             }
             else
-            {
-                return "F";
+            
+             return "F";
+
+
+
+
             }
-        }
 
             static string ReturnFaseJogo(int Id)
         {

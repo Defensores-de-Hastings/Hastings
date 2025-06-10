@@ -1,7 +1,7 @@
 # 👑 Projeto Integrador | Sistema Autônomo - King Me!
 
 ## 📌 Sobre o Projeto
-Este repositório faz parte de um projeto integrador, tendo como objetivo a criação de um sistema autônomo que jogue *King Me!* (1998) de forma eficiente, utilizando a linguagem C#.
+Este repositório faz parte de um projeto integrador, tendo como objetivo a criação de um sistema autônomo que jogue *King Me!* (1998) de forma eficiente, utilizando a linguagem C#. O sistema implementa um agente autônomo com estratégias avançadas para tomar decisões inteligentes durante o jogo.
 
 ## 🛠️ Tecnologias Utilizadas:
 🔹 C#
@@ -61,6 +61,32 @@ Este repositório faz parte de um projeto integrador, tendo como objetivo a cria
 - Os jogadores se revezam movimentando suas peças pelo tabuleiro.
 - Peças podem ser movidas para espaços adjacentes vazios ou podem "capturar" peças adversárias em certas situações.
 - O primeiro jogador a coroar seu peão e manter o controle sobre o tabuleiro vence.
+
+## 🤖 Sistema Autônomo
+O sistema implementa um agente autônomo com as seguintes características:
+
+### 🔹 Estratégia por Fase
+1. **Fase S - Seleção (Posicionamento)**
+   - Posicionamento estratégico baseado em análise do tabuleiro
+   - Escolha inteligente de setores e níveis
+   - Adaptação dinâmica baseada no progresso do jogo
+
+2. **Fase P - Promoção**
+   - Análise de personagens disponíveis
+   - Decisão baseada em potencial estratégico
+   - Consideração da posição atual no tabuleiro
+
+3. **Fase V - Votação**
+   - Análise contextual do jogo
+   - Decisões baseadas em objetivos estratégicos
+   - Adaptação às mudanças do jogo
+
+### 🔹 Características do Agente
+- Decisões baseadas em análise de estado
+- Estratégia adaptativa
+- Sistema de prioridades dinâmico
+- Validações robustas de movimentos
+- Logs detalhados para debugging
 
 ## 🚀 Como Executar o Projeto
 1. Clone o repositório:

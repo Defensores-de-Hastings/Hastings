@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\fernando.bsilva33\\Documents\\GitHub\\Hastings\\PI_3_Defensores_de_Hastings\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\fernando.bsilva33\\Documents\\GitHub\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|c:\\users\\fernando.bsilva33\\documents\\github\\hastings\\pi_3_defensores_de_hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|c:\\users\\fernando.bsilva33\\documents\\github\\hastings\\pi_3_defensores_de_hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|C:\\Users\\fernando.bsilva33\\Documents\\GitHub\\Hastings\\PI_3_Defensores_de_Hastings\\pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C2C8B9F6-BF35-479E-B852-4360B48E9291}|PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings.csproj|solutionrelative:pi_3_defensores_de_hastings\\frmlobbydapartida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -106,7 +106,7 @@
               "RelativeDocumentMoniker": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
               "ToolTip": "C:\\Users\\fernando.bsilva33\\Documents\\GitHub\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
               "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAADgv8wAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAWwBIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T23:41:34.913Z",
               "EditorCaption": ""
@@ -120,8 +120,7 @@
               "ToolTip": "C:\\Users\\fernando.bsilva33\\Documents\\GitHub\\Hastings\\PI_3_Defensores_de_Hastings\\PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
               "RelativeToolTip": "PI_3_Defensores_de_Hastings\\frmLobbyDaPartida.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T23:41:32.931Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-06-09T23:41:32.931Z"
             },
             {
               "$type": "Document",

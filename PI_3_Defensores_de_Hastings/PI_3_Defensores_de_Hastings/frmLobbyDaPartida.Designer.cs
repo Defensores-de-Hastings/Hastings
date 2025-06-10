@@ -68,8 +68,6 @@
             this.lblUltimasJogadas = new System.Windows.Forms.Label();
             this.tmrVez = new System.Windows.Forms.Timer(this.components);
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnMostrarEstrategia = new System.Windows.Forms.Button();
-            this.btnVerificarEstado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbJogadores
@@ -538,44 +536,12 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnMostrarEstrategia
-            // 
-            this.btnMostrarEstrategia.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMostrarEstrategia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnMostrarEstrategia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMostrarEstrategia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnMostrarEstrategia.Location = new System.Drawing.Point(16, 628);
-            this.btnMostrarEstrategia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMostrarEstrategia.Name = "btnMostrarEstrategia";
-            this.btnMostrarEstrategia.Size = new System.Drawing.Size(269, 69);
-            this.btnMostrarEstrategia.TabIndex = 15;
-            this.btnMostrarEstrategia.Text = "Mostrar Estratégia";
-            this.btnMostrarEstrategia.UseVisualStyleBackColor = false;
-            this.btnMostrarEstrategia.Click += new System.EventHandler(this.btnMostrarEstrategia_Click);
-            // 
-            // btnVerificarEstado
-            // 
-            this.btnVerificarEstado.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVerificarEstado.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnVerificarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerificarEstado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnVerificarEstado.Location = new System.Drawing.Point(16, 705);
-            this.btnVerificarEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVerificarEstado.Name = "btnVerificarEstado";
-            this.btnVerificarEstado.Size = new System.Drawing.Size(269, 69);
-            this.btnVerificarEstado.TabIndex = 16;
-            this.btnVerificarEstado.Text = "Verificar Estado";
-            this.btnVerificarEstado.UseVisualStyleBackColor = false;
-            this.btnVerificarEstado.Click += new System.EventHandler(this.btnVerificarEstado_Click);
-            // 
             // frmLobbyDaPartida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1411, 711);
-            this.Controls.Add(this.btnVerificarEstado);
-            this.Controls.Add(this.btnMostrarEstrategia);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblUltimasJogadas);
             this.Controls.Add(this.lblEstadoJogo);
@@ -617,7 +583,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLobbyDaPartida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLobbyDaPartida";
+            this.Text = "Lobby da Partida";
+            this.Load += new System.EventHandler(this.frmLobbyDaPartida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -664,7 +631,5 @@
         private System.Windows.Forms.Label lblUltimasJogadas;
         private System.Windows.Forms.Timer tmrVez;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnMostrarEstrategia;
-        private System.Windows.Forms.Button btnVerificarEstado;
     }
 }

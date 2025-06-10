@@ -16,7 +16,6 @@ namespace PI_3_Defensores_de_Hastings
         private List<string> _playerCards;
         private string _resultadoFinal;
         private int Contador = 0;
-        private readonly LlamaService _llamaService;
         private readonly AutonomousAgent _autonomousAgent;
         
         // Propriedade para obter o ID do jogador como int
@@ -32,7 +31,6 @@ namespace PI_3_Defensores_de_Hastings
 
             _availableLetters = new List<string>(_initialLetters);
             _playerCards = new List<string>();
-            _llamaService = new LlamaService();
             _autonomousAgent = new AutonomousAgent();
 
             lblEstadoJogo.Visible = false;
@@ -57,7 +55,7 @@ namespace PI_3_Defensores_de_Hastings
             try
             {
                 Jogo.Iniciar(IdJogador, _senhaDoJogador);
-                timer1.Start();
+                tmrVez.Start();
                 Task.Run(async () => await TestarAgenteInicial());
             }
             catch (Exception ex)
@@ -177,7 +175,7 @@ namespace PI_3_Defensores_de_Hastings
             lblMostraVez.Text = verificacao.FirstOrDefault()?.Split(',')[0] ?? string.Empty;
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        private async void tmrVez_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -196,7 +194,6 @@ namespace PI_3_Defensores_de_Hastings
         {
             try
             {
-                var gameState = GetCurrentGameState();
                 var fase = Jogo.FaseAtual;
                 var turno = Jogo.TurnoAtual;
 
@@ -248,7 +245,7 @@ namespace PI_3_Defensores_de_Hastings
             }
             catch
             {
-                ExecuteFallbackStrategy("S");
+                ExecuteFallbackSelection();
             }
         }
 
@@ -261,7 +258,7 @@ namespace PI_3_Defensores_de_Hastings
             }
             catch
             {
-                ExecuteFallbackStrategy("P");
+                ExecuteFallbackPromotion();
             }
         }
 
@@ -274,7 +271,7 @@ namespace PI_3_Defensores_de_Hastings
             }
             catch
             {
-                ExecuteFallbackStrategy("V");
+                ExecuteFallbackVoting();
             }
         }
 
@@ -296,12 +293,19 @@ namespace PI_3_Defensores_de_Hastings
 
         private void ExecuteFallbackSelection()
         {
-            var sector = DetermineSector(Jogo.TurnoAtual);
-            var character = _availableLetters[new Random().Next(_availableLetters.Count)];
-            var level = new Random().Next(1, 6);
-
-            Jogo.SelecionarPersonagem(character, sector, level);
-            _availableLetters.Remove(character);
+            try
+            {
+                var character = _availableLetters.FirstOrDefault();
+                if (character != null)
+                {
+                    var sector = DetermineSector(Jogo.TurnoAtual);
+                    Jogo.SelecionarPersonagem(character, sector, 1);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro na seleção de fallback: {ex.Message}");
+            }
         }
 
         private int DetermineSector(int turno)
@@ -314,55 +318,83 @@ namespace PI_3_Defensores_de_Hastings
 
         private void ExecuteFallbackPromotion()
         {
-            var character = _availableLetters[new Random().Next(_availableLetters.Count)];
-            Jogo.PromoverPersonagem(character);
+            try
+            {
+                var character = _availableLetters.FirstOrDefault();
+                if (character != null)
+                {
+                    Jogo.PromoverPersonagem(character);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro na promoção de fallback: {ex.Message}");
+            }
         }
 
         private void ExecuteFallbackVoting()
         {
-            var vote = new Random().Next(100) < 60 ? "S" : "N";
-            Jogo.Votar(vote);
+            try
+            {
+                Jogo.Votar("S");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro na votação de fallback: {ex.Message}");
+            }
         }
 
         private string GetCurrentGameState()
         {
             return $"Fase: {Jogo.FaseAtual}, Turno: {Jogo.TurnoAtual}, " +
-                   $"Letras: {string.Join(",", _availableLetters)}, " +
-                   $"Cartas: {string.Join(",", _playerCards)}";
+                   $"Letras disponíveis: {string.Join(", ", _availableLetters)}, " +
+                   $"Cartas do jogador: {string.Join(", ", _playerCards)}";
         }
 
         private void btnVerMapa_Click(object sender, EventArgs e)
         {
-            new Mapa(_resultadoFinal).ShowDialog();
+            var frmMapa = new frmMapa();
+            frmMapa.Show();
         }
 
         private void btnVotar_Click(object sender, EventArgs e)
         {
-            int jogador = IdJogador;
-            Jogo.Votar(jogador, _senhaDoJogador, txtVoto.Text);
+            if (int.TryParse(txtVoto.Text, out int jogador))
+            {
+                Jogo.Votar(jogador, _senhaDoJogador, txtVoto.Text);
+            }
+            else
+            {
+                MessageBox.Show("Jogador inválido.");
+            }
         }
 
         private void btnPromover_Click(object sender, EventArgs e)
         {
-            promover();
-        }
-
-        private void promover()
-        {
-            int jogador = IdJogador;
-            Jogo.Promover(jogador, _senhaDoJogador, txtEscolhaPersonagem.Text);
+            if (int.TryParse(txtPromover.Text, out int jogador))
+            {
+                Jogo.Promover(jogador, _senhaDoJogador, txtEscolhaPersonagem.Text);
+            }
+            else
+            {
+                MessageBox.Show("Jogador inválido.");
+            }
         }
 
         private void lblColocarSetor_Click(object sender, EventArgs e)
         {
+            txtEscolheSetor.Focus();
         }
 
         private void lblEscolhaPersonagem_Click(object sender, EventArgs e)
         {
+            txtEscolhaPersonagem.Focus();
         }
 
         private void lstbSetores_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstbSetores.SelectedItem != null)
+                txtEscolheSetor.Text = lstbSetores.SelectedItem.ToString();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -372,140 +404,28 @@ namespace PI_3_Defensores_de_Hastings
 
         private void lstbVerificarVez_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string fase = Jogo.FaseAtual;
-            MessageBox.Show(fase);
-        }
-
-        private async void btnTestarLlama_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                btnTestarLlama.Enabled = false;
-                btnTestarLlama.Text = "Testando...";
-                
-                var conectividade = await LlamaTest.TestarConectividade();
-                
-                if (conectividade)
-                {
-                    await LlamaTest.MostrarTesteDecisao();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao testar Llama: {ex.Message}", 
-                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                btnTestarLlama.Enabled = true;
-                btnTestarLlama.Text = "Testar IA";
-            }
+            if (lstbVerificarVez.SelectedItem != null)
+                txtVoto.Text = lstbVerificarVez.SelectedItem.ToString();
         }
 
         private void btnMostrarEstrategia_Click(object sender, EventArgs e)
         {
-            var estrategia = @"
-🤖 ESTRATÉGIA DO AGENTE AUTÔNOMO
+            var estado = GetCurrentGameState();
+            var fase = Jogo.FaseAtual;
+            var turno = Jogo.TurnoAtual;
 
-📊 Estratégia por Fase:
+            var decision = _autonomousAgent.MakeDecision(fase, turno, _availableLetters, _playerCards);
+            var mensagem = $"📊 ESTADO ATUAL DO JOGO:\n\n" +
+                          $"Estado: {estado}\n" +
+                          $"Decisão do agente: {decision}";
 
-1. Seleção (S):
-   - Posicionamento estratégico por turno
-   - Escolha de personagens por prioridade
-   - Níveis ajustados ao setor
-
-2. Promoção (P):
-   - Análise de personagens disponíveis
-   - Escolha baseada em prioridades
-   - Consideração de cartas
-
-3. Votação (V):
-   - Decisão baseada no turno
-   - Probabilidade ajustada
-   - Estratégia de finalização
-
-🛡️ Fallback: Estratégia básica se necessário";
-
-            MessageBox.Show(estrategia, "Estratégia do Agente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private async void btnDebugBot_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                btnDebugBot.Enabled = false;
-                btnDebugBot.Text = "Testando...";
-                
-                Console.WriteLine("=== TESTE MANUAL DO BOT ===");
-                
-                // Verificar estado atual
-                VerificarVez();
-                string fase = Jogo.FaseAtual;
-                
-                Console.WriteLine($"Estado atual - Fase: {fase}");
-                Console.WriteLine($"ID Jogador: {lblMostraID.Text}");
-                Console.WriteLine($"Vez de quem: {lblMostraVez.Text}");
-                Console.WriteLine($"É minha vez: {lblMostraID.Text == lblMostraVez.Text}");
-                
-                if (lblMostraID.Text == lblMostraVez.Text)
-                {
-                    Console.WriteLine("Executando bot...");
-                    await ExecutarAgente();
-                }
-                else
-                {
-                    Console.WriteLine("Não é minha vez ainda");
-                    MessageBox.Show("Não é sua vez ainda. Aguarde sua vez para o bot jogar automaticamente.", 
-                        "Debug Bot", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro no debug: {ex.Message}");
-                MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                btnDebugBot.Enabled = true;
-                btnDebugBot.Text = "Debug Bot";
-            }
+            MessageBox.Show(mensagem, "Estratégia do Agente", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnVerificarEstado_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VerificarVez();
-                string fase = Jogo.FaseAtual;
-                
-                var estado = $@"
-📊 ESTADO ATUAL DO JOGO:
-
-🆔 ID do Jogador: {lblMostraID.Text}
-🔄 Vez de quem: {lblMostraVez.Text}
-✅ É minha vez: {lblMostraID.Text == lblMostraVez.Text}
-🎯 Fase atual: {fase}
-📝 Letras disponíveis: {string.Join(", ", _availableLetters)}
-🃏 Minhas cartas: {string.Join(", ", _playerCards)}
-🔢 Contador: {Contador}
-⏰ Timer ativo: {tmrVez.Enabled}";
-
-                MessageBox.Show(estado, "Estado do Jogo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao verificar estado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            var estado = GetCurrentGameState();
+            MessageBox.Show(estado, "Estado do Jogo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -68,9 +68,8 @@
             this.lblUltimasJogadas = new System.Windows.Forms.Label();
             this.tmrVez = new System.Windows.Forms.Timer(this.components);
             this.btnSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnTestarLlama = new System.Windows.Forms.Button();
-            this.btnDebugBot = new System.Windows.Forms.Button();
+            this.btnMostrarEstrategia = new System.Windows.Forms.Button();
+            this.btnVerificarEstado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbJogadores
@@ -520,49 +519,54 @@
             // 
             // tmrVez
             // 
-            this.tmrVez.Interval = 3000;
+            this.tmrVez.Enabled = true;
+            this.tmrVez.Interval = 1000;
             this.tmrVez.Tick += new System.EventHandler(this.tmrVez_Tick);
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(1247, 639);
+            this.btnSair.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSair.Location = new System.Drawing.Point(16, 551);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(148, 58);
-            this.btnSair.TabIndex = 41;
+            this.btnSair.Size = new System.Drawing.Size(269, 69);
+            this.btnSair.TabIndex = 14;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button1
+            // btnMostrarEstrategia
             // 
-            this.button1.Location = new System.Drawing.Point(1247, 544);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnMostrarEstrategia.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMostrarEstrategia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMostrarEstrategia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMostrarEstrategia.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnMostrarEstrategia.Location = new System.Drawing.Point(16, 628);
+            this.btnMostrarEstrategia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostrarEstrategia.Name = "btnMostrarEstrategia";
+            this.btnMostrarEstrategia.Size = new System.Drawing.Size(269, 69);
+            this.btnMostrarEstrategia.TabIndex = 15;
+            this.btnMostrarEstrategia.Text = "Mostrar Estratégia";
+            this.btnMostrarEstrategia.UseVisualStyleBackColor = false;
+            this.btnMostrarEstrategia.Click += new System.EventHandler(this.btnMostrarEstrategia_Click);
             // 
-            // btnTestarLlama
+            // btnVerificarEstado
             // 
-            this.btnTestarLlama.Location = new System.Drawing.Point(1183, 44);
-            this.btnTestarLlama.Name = "btnTestarLlama";
-            this.btnTestarLlama.Size = new System.Drawing.Size(75, 23);
-            this.btnTestarLlama.TabIndex = 43;
-            this.btnTestarLlama.Text = "Teste IA";
-            this.btnTestarLlama.UseVisualStyleBackColor = true;
-            this.btnTestarLlama.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnDebugBot
-            // 
-            this.btnDebugBot.Location = new System.Drawing.Point(1183, 81);
-            this.btnDebugBot.Name = "btnDebugBot";
-            this.btnDebugBot.Size = new System.Drawing.Size(75, 23);
-            this.btnDebugBot.TabIndex = 44;
-            this.btnDebugBot.Text = "Debug IA";
-            this.btnDebugBot.UseVisualStyleBackColor = true;
+            this.btnVerificarEstado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVerificarEstado.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnVerificarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerificarEstado.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnVerificarEstado.Location = new System.Drawing.Point(16, 705);
+            this.btnVerificarEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVerificarEstado.Name = "btnVerificarEstado";
+            this.btnVerificarEstado.Size = new System.Drawing.Size(269, 69);
+            this.btnVerificarEstado.TabIndex = 16;
+            this.btnVerificarEstado.Text = "Verificar Estado";
+            this.btnVerificarEstado.UseVisualStyleBackColor = false;
+            this.btnVerificarEstado.Click += new System.EventHandler(this.btnVerificarEstado_Click);
             // 
             // frmLobbyDaPartida
             // 
@@ -570,9 +574,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1411, 711);
-            this.Controls.Add(this.btnDebugBot);
-            this.Controls.Add(this.btnTestarLlama);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVerificarEstado);
+            this.Controls.Add(this.btnMostrarEstrategia);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblUltimasJogadas);
             this.Controls.Add(this.lblEstadoJogo);
@@ -661,8 +664,7 @@
         private System.Windows.Forms.Label lblUltimasJogadas;
         private System.Windows.Forms.Timer tmrVez;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnTestarLlama;
-        private System.Windows.Forms.Button btnDebugBot;
+        private System.Windows.Forms.Button btnMostrarEstrategia;
+        private System.Windows.Forms.Button btnVerificarEstado;
     }
 }

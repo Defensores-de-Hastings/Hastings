@@ -36,6 +36,9 @@
     <Reference Include="KingMeServer">
       <HintPath>.\KingMeServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +82,8 @@
     <Compile Include="frmLobbyDaPartida.Designer.cs">
       <DependentUpon>frmLobbyDaPartida.cs</DependentUpon>
     </Compile>
+    <Compile Include="LlamaService.cs" />
+    <Compile Include="LlamaTest.cs" />
     <Compile Include="Partida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

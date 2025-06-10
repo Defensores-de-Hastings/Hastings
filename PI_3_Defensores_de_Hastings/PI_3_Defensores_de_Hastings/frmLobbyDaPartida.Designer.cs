@@ -69,16 +69,19 @@
             this.tmrVez = new System.Windows.Forms.Timer(this.components);
             this.btnSair = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnTestarLlama = new System.Windows.Forms.Button();
+            this.btnDebugBot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstbJogadores
             // 
             this.lstbJogadores.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lstbJogadores.FormattingEnabled = true;
-            this.lstbJogadores.ItemHeight = 15;
-            this.lstbJogadores.Location = new System.Drawing.Point(12, 41);
+            this.lstbJogadores.ItemHeight = 18;
+            this.lstbJogadores.Location = new System.Drawing.Point(16, 50);
+            this.lstbJogadores.Margin = new System.Windows.Forms.Padding(4);
             this.lstbJogadores.Name = "lstbJogadores";
-            this.lstbJogadores.Size = new System.Drawing.Size(106, 154);
+            this.lstbJogadores.Size = new System.Drawing.Size(140, 184);
             this.lstbJogadores.TabIndex = 0;
             // 
             // lblJogadores
@@ -86,9 +89,10 @@
             this.lblJogadores.AutoSize = true;
             this.lblJogadores.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.lblJogadores.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblJogadores.Location = new System.Drawing.Point(8, 14);
+            this.lblJogadores.Location = new System.Drawing.Point(11, 17);
+            this.lblJogadores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJogadores.Name = "lblJogadores";
-            this.lblJogadores.Size = new System.Drawing.Size(117, 24);
+            this.lblJogadores.Size = new System.Drawing.Size(146, 30);
             this.lblJogadores.TabIndex = 1;
             this.lblJogadores.Text = "Jogadores:";
             // 
@@ -98,9 +102,10 @@
             this.bntComecar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bntComecar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntComecar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.bntComecar.Location = new System.Drawing.Point(12, 257);
+            this.bntComecar.Location = new System.Drawing.Point(16, 316);
+            this.bntComecar.Margin = new System.Windows.Forms.Padding(4);
             this.bntComecar.Name = "bntComecar";
-            this.bntComecar.Size = new System.Drawing.Size(106, 32);
+            this.bntComecar.Size = new System.Drawing.Size(141, 39);
             this.bntComecar.TabIndex = 2;
             this.bntComecar.Text = "Começar";
             this.bntComecar.UseVisualStyleBackColor = false;
@@ -112,9 +117,10 @@
             this.btnListarJogadores.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnListarJogadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarJogadores.Font = new System.Drawing.Font("Arial", 7F, System.Drawing.FontStyle.Bold);
-            this.btnListarJogadores.Location = new System.Drawing.Point(12, 220);
+            this.btnListarJogadores.Location = new System.Drawing.Point(16, 271);
+            this.btnListarJogadores.Margin = new System.Windows.Forms.Padding(4);
             this.btnListarJogadores.Name = "btnListarJogadores";
-            this.btnListarJogadores.Size = new System.Drawing.Size(106, 31);
+            this.btnListarJogadores.Size = new System.Drawing.Size(141, 38);
             this.btnListarJogadores.TabIndex = 3;
             this.btnListarJogadores.Text = "Listar Jogadores";
             this.btnListarJogadores.UseVisualStyleBackColor = false;
@@ -125,9 +131,10 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblSenha.Location = new System.Drawing.Point(134, 41);
+            this.lblSenha.Location = new System.Drawing.Point(179, 50);
+            this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(120, 22);
+            this.lblSenha.Size = new System.Drawing.Size(147, 29);
             this.lblSenha.TabIndex = 4;
             this.lblSenha.Text = "Sua senha: ";
             // 
@@ -136,9 +143,10 @@
             this.lblMostraSenha.AutoSize = true;
             this.lblMostraSenha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMostraSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMostraSenha.Location = new System.Drawing.Point(135, 66);
+            this.lblMostraSenha.Location = new System.Drawing.Point(180, 81);
+            this.lblMostraSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostraSenha.Name = "lblMostraSenha";
-            this.lblMostraSenha.Size = new System.Drawing.Size(112, 18);
+            this.lblMostraSenha.Size = new System.Drawing.Size(140, 23);
             this.lblMostraSenha.TabIndex = 5;
             this.lblMostraSenha.Text = "Replace senha";
             // 
@@ -147,9 +155,10 @@
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblID.Location = new System.Drawing.Point(134, 98);
+            this.lblID.Location = new System.Drawing.Point(179, 121);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(77, 22);
+            this.lblID.Size = new System.Drawing.Size(95, 29);
             this.lblID.TabIndex = 6;
             this.lblID.Text = "Seu ID:";
             // 
@@ -158,26 +167,29 @@
             this.lblMostraID.AutoSize = true;
             this.lblMostraID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMostraID.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMostraID.Location = new System.Drawing.Point(135, 123);
+            this.lblMostraID.Location = new System.Drawing.Point(180, 151);
+            this.lblMostraID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostraID.Name = "lblMostraID";
-            this.lblMostraID.Size = new System.Drawing.Size(89, 19);
+            this.lblMostraID.Size = new System.Drawing.Size(108, 24);
             this.lblMostraID.TabIndex = 7;
             this.lblMostraID.Text = "Replace ID";
             // 
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.txtSenha.Location = new System.Drawing.Point(139, 176);
+            this.txtSenha.Location = new System.Drawing.Point(185, 217);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(121, 21);
+            this.txtSenha.Size = new System.Drawing.Size(160, 25);
             this.txtSenha.TabIndex = 8;
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.txtID.Location = new System.Drawing.Point(139, 236);
+            this.txtID.Location = new System.Drawing.Point(185, 290);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(121, 21);
+            this.txtID.Size = new System.Drawing.Size(160, 25);
             this.txtID.TabIndex = 9;
             // 
             // lblEscreverSenha
@@ -185,9 +197,10 @@
             this.lblEscreverSenha.AutoSize = true;
             this.lblEscreverSenha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEscreverSenha.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEscreverSenha.Location = new System.Drawing.Point(135, 153);
+            this.lblEscreverSenha.Location = new System.Drawing.Point(180, 188);
+            this.lblEscreverSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEscreverSenha.Name = "lblEscreverSenha";
-            this.lblEscreverSenha.Size = new System.Drawing.Size(134, 19);
+            this.lblEscreverSenha.Size = new System.Drawing.Size(164, 24);
             this.lblEscreverSenha.TabIndex = 10;
             this.lblEscreverSenha.Text = "Escrever senha:";
             // 
@@ -196,9 +209,10 @@
             this.lblEscreverID.AutoSize = true;
             this.lblEscreverID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEscreverID.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEscreverID.Location = new System.Drawing.Point(135, 209);
+            this.lblEscreverID.Location = new System.Drawing.Point(180, 257);
+            this.lblEscreverID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEscreverID.Name = "lblEscreverID";
-            this.lblEscreverID.Size = new System.Drawing.Size(117, 19);
+            this.lblEscreverID.Size = new System.Drawing.Size(144, 24);
             this.lblEscreverID.TabIndex = 11;
             this.lblEscreverID.Text = "Escrever o ID:";
             // 
@@ -206,10 +220,11 @@
             // 
             this.lstbVerificarVez.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lstbVerificarVez.FormattingEnabled = true;
-            this.lstbVerificarVez.ItemHeight = 15;
-            this.lstbVerificarVez.Location = new System.Drawing.Point(282, 227);
+            this.lstbVerificarVez.ItemHeight = 18;
+            this.lstbVerificarVez.Location = new System.Drawing.Point(376, 279);
+            this.lstbVerificarVez.Margin = new System.Windows.Forms.Padding(4);
             this.lstbVerificarVez.Name = "lstbVerificarVez";
-            this.lstbVerificarVez.Size = new System.Drawing.Size(202, 259);
+            this.lstbVerificarVez.Size = new System.Drawing.Size(268, 310);
             this.lstbVerificarVez.TabIndex = 12;
             this.lstbVerificarVez.SelectedIndexChanged += new System.EventHandler(this.lstbVerificarVez_SelectedIndexChanged);
             // 
@@ -219,9 +234,10 @@
             this.btnVerificarVez.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVerificarVez.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerificarVez.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnVerificarVez.Location = new System.Drawing.Point(12, 385);
+            this.btnVerificarVez.Location = new System.Drawing.Point(16, 474);
+            this.btnVerificarVez.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerificarVez.Name = "btnVerificarVez";
-            this.btnVerificarVez.Size = new System.Drawing.Size(202, 56);
+            this.btnVerificarVez.Size = new System.Drawing.Size(269, 69);
             this.btnVerificarVez.TabIndex = 13;
             this.btnVerificarVez.Text = "Verificar Estado Do Tabuleiro";
             this.btnVerificarVez.UseVisualStyleBackColor = false;
@@ -232,9 +248,10 @@
             this.lblVez.AutoSize = true;
             this.lblVez.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVez.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblVez.Location = new System.Drawing.Point(8, 319);
+            this.lblVez.Location = new System.Drawing.Point(11, 393);
+            this.lblVez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVez.Name = "lblVez";
-            this.lblVez.Size = new System.Drawing.Size(168, 22);
+            this.lblVez.Size = new System.Drawing.Size(206, 29);
             this.lblVez.TabIndex = 14;
             this.lblVez.Text = "De quem é a vez:";
             // 
@@ -243,9 +260,10 @@
             this.lblMostraVez.AutoSize = true;
             this.lblMostraVez.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMostraVez.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblMostraVez.Location = new System.Drawing.Point(10, 362);
+            this.lblMostraVez.Location = new System.Drawing.Point(13, 446);
+            this.lblMostraVez.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMostraVez.Name = "lblMostraVez";
-            this.lblMostraVez.Size = new System.Drawing.Size(85, 18);
+            this.lblMostraVez.Size = new System.Drawing.Size(108, 23);
             this.lblMostraVez.TabIndex = 15;
             this.lblMostraVez.Text = "Replace ID";
             // 
@@ -254,9 +272,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(10, 342);
+            this.label1.Location = new System.Drawing.Point(13, 421);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
+            this.label1.Size = new System.Drawing.Size(109, 23);
             this.label1.TabIndex = 16;
             this.label1.Text = "É a vez do:";
             // 
@@ -264,10 +283,11 @@
             // 
             this.lstbPersonagens.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lstbPersonagens.FormattingEnabled = true;
-            this.lstbPersonagens.ItemHeight = 15;
-            this.lstbPersonagens.Location = new System.Drawing.Point(282, 41);
+            this.lstbPersonagens.ItemHeight = 18;
+            this.lstbPersonagens.Location = new System.Drawing.Point(376, 50);
+            this.lstbPersonagens.Margin = new System.Windows.Forms.Padding(4);
             this.lstbPersonagens.Name = "lstbPersonagens";
-            this.lstbPersonagens.Size = new System.Drawing.Size(202, 124);
+            this.lstbPersonagens.Size = new System.Drawing.Size(268, 148);
             this.lstbPersonagens.TabIndex = 18;
             // 
             // lblPersonagens
@@ -275,9 +295,10 @@
             this.lblPersonagens.AutoSize = true;
             this.lblPersonagens.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonagens.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblPersonagens.Location = new System.Drawing.Point(278, 14);
+            this.lblPersonagens.Location = new System.Drawing.Point(371, 17);
+            this.lblPersonagens.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPersonagens.Name = "lblPersonagens";
-            this.lblPersonagens.Size = new System.Drawing.Size(141, 22);
+            this.lblPersonagens.Size = new System.Drawing.Size(170, 29);
             this.lblPersonagens.TabIndex = 19;
             this.lblPersonagens.Text = "Personagens:";
             // 
@@ -286,9 +307,10 @@
             this.lblSetor.AutoSize = true;
             this.lblSetor.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.lblSetor.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblSetor.Location = new System.Drawing.Point(507, 13);
+            this.lblSetor.Location = new System.Drawing.Point(676, 16);
+            this.lblSetor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSetor.Name = "lblSetor";
-            this.lblSetor.Size = new System.Drawing.Size(89, 22);
+            this.lblSetor.Size = new System.Drawing.Size(107, 29);
             this.lblSetor.TabIndex = 20;
             this.lblSetor.Text = "Setores:";
             // 
@@ -296,10 +318,11 @@
             // 
             this.lstbSetores.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lstbSetores.FormattingEnabled = true;
-            this.lstbSetores.ItemHeight = 15;
-            this.lstbSetores.Location = new System.Drawing.Point(511, 41);
+            this.lstbSetores.ItemHeight = 18;
+            this.lstbSetores.Location = new System.Drawing.Point(681, 50);
+            this.lstbSetores.Margin = new System.Windows.Forms.Padding(4);
             this.lstbSetores.Name = "lstbSetores";
-            this.lstbSetores.Size = new System.Drawing.Size(144, 124);
+            this.lstbSetores.Size = new System.Drawing.Size(191, 148);
             this.lstbSetores.TabIndex = 21;
             this.lstbSetores.SelectedIndexChanged += new System.EventHandler(this.lstbSetores_SelectedIndexChanged);
             // 
@@ -309,9 +332,10 @@
             this.btnColocarPersonagem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnColocarPersonagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColocarPersonagem.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.btnColocarPersonagem.Location = new System.Drawing.Point(666, 110);
+            this.btnColocarPersonagem.Location = new System.Drawing.Point(888, 135);
+            this.btnColocarPersonagem.Margin = new System.Windows.Forms.Padding(4);
             this.btnColocarPersonagem.Name = "btnColocarPersonagem";
-            this.btnColocarPersonagem.Size = new System.Drawing.Size(136, 44);
+            this.btnColocarPersonagem.Size = new System.Drawing.Size(181, 54);
             this.btnColocarPersonagem.TabIndex = 22;
             this.btnColocarPersonagem.Text = "Colocar Personagem";
             this.btnColocarPersonagem.UseVisualStyleBackColor = false;
@@ -322,9 +346,10 @@
             this.txtCartas.AutoSize = true;
             this.txtCartas.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCartas.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCartas.Location = new System.Drawing.Point(686, 358);
+            this.txtCartas.Location = new System.Drawing.Point(915, 441);
+            this.txtCartas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtCartas.Name = "txtCartas";
-            this.txtCartas.Size = new System.Drawing.Size(78, 22);
+            this.txtCartas.Size = new System.Drawing.Size(93, 29);
             this.txtCartas.TabIndex = 26;
             this.txtCartas.Text = "Cartas:";
             // 
@@ -332,10 +357,11 @@
             // 
             this.TXBCartas.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.TXBCartas.FormattingEnabled = true;
-            this.TXBCartas.ItemHeight = 15;
-            this.TXBCartas.Location = new System.Drawing.Point(690, 385);
+            this.TXBCartas.ItemHeight = 18;
+            this.TXBCartas.Location = new System.Drawing.Point(920, 474);
+            this.TXBCartas.Margin = new System.Windows.Forms.Padding(4);
             this.TXBCartas.Name = "TXBCartas";
-            this.TXBCartas.Size = new System.Drawing.Size(144, 94);
+            this.TXBCartas.Size = new System.Drawing.Size(191, 112);
             this.TXBCartas.TabIndex = 27;
             // 
             // btnVotar
@@ -344,9 +370,10 @@
             this.btnVotar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVotar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVotar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVotar.Location = new System.Drawing.Point(667, 207);
+            this.btnVotar.Location = new System.Drawing.Point(889, 255);
+            this.btnVotar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVotar.Name = "btnVotar";
-            this.btnVotar.Size = new System.Drawing.Size(136, 39);
+            this.btnVotar.Size = new System.Drawing.Size(181, 48);
             this.btnVotar.TabIndex = 28;
             this.btnVotar.Text = "Votar";
             this.btnVotar.UseVisualStyleBackColor = false;
@@ -357,9 +384,10 @@
             this.btnPromover.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnPromover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPromover.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPromover.Location = new System.Drawing.Point(808, 110);
+            this.btnPromover.Location = new System.Drawing.Point(1077, 135);
+            this.btnPromover.Margin = new System.Windows.Forms.Padding(4);
             this.btnPromover.Name = "btnPromover";
-            this.btnPromover.Size = new System.Drawing.Size(136, 44);
+            this.btnPromover.Size = new System.Drawing.Size(181, 54);
             this.btnPromover.TabIndex = 29;
             this.btnPromover.Text = "Promover";
             this.btnPromover.UseVisualStyleBackColor = false;
@@ -371,9 +399,10 @@
             this.btnVerMapa.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnVerMapa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerMapa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerMapa.Location = new System.Drawing.Point(811, 216);
+            this.btnVerMapa.Location = new System.Drawing.Point(1081, 266);
+            this.btnVerMapa.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerMapa.Name = "btnVerMapa";
-            this.btnVerMapa.Size = new System.Drawing.Size(143, 67);
+            this.btnVerMapa.Size = new System.Drawing.Size(191, 82);
             this.btnVerMapa.TabIndex = 30;
             this.btnVerMapa.Text = "Ver Mapa";
             this.btnVerMapa.UseVisualStyleBackColor = false;
@@ -384,9 +413,10 @@
             this.lblColocarSetor.AutoSize = true;
             this.lblColocarSetor.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColocarSetor.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblColocarSetor.Location = new System.Drawing.Point(663, 19);
+            this.lblColocarSetor.Location = new System.Drawing.Point(884, 23);
+            this.lblColocarSetor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColocarSetor.Name = "lblColocarSetor";
-            this.lblColocarSetor.Size = new System.Drawing.Size(99, 15);
+            this.lblColocarSetor.Size = new System.Drawing.Size(124, 18);
             this.lblColocarSetor.TabIndex = 31;
             this.lblColocarSetor.Text = "Escolha o Setor:";
             this.lblColocarSetor.Click += new System.EventHandler(this.lblColocarSetor_Click);
@@ -394,17 +424,19 @@
             // txtEscolheSetor
             // 
             this.txtEscolheSetor.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.txtEscolheSetor.Location = new System.Drawing.Point(666, 37);
+            this.txtEscolheSetor.Location = new System.Drawing.Point(888, 46);
+            this.txtEscolheSetor.Margin = new System.Windows.Forms.Padding(4);
             this.txtEscolheSetor.Name = "txtEscolheSetor";
-            this.txtEscolheSetor.Size = new System.Drawing.Size(136, 21);
+            this.txtEscolheSetor.Size = new System.Drawing.Size(180, 25);
             this.txtEscolheSetor.TabIndex = 32;
             // 
             // txtEscolhaPersonagem
             // 
             this.txtEscolhaPersonagem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.txtEscolhaPersonagem.Location = new System.Drawing.Point(666, 84);
+            this.txtEscolhaPersonagem.Location = new System.Drawing.Point(888, 103);
+            this.txtEscolhaPersonagem.Margin = new System.Windows.Forms.Padding(4);
             this.txtEscolhaPersonagem.Name = "txtEscolhaPersonagem";
-            this.txtEscolhaPersonagem.Size = new System.Drawing.Size(136, 21);
+            this.txtEscolhaPersonagem.Size = new System.Drawing.Size(180, 25);
             this.txtEscolhaPersonagem.TabIndex = 34;
             // 
             // lblEscolhaPersonagem
@@ -412,9 +444,10 @@
             this.lblEscolhaPersonagem.AutoSize = true;
             this.lblEscolhaPersonagem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEscolhaPersonagem.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEscolhaPersonagem.Location = new System.Drawing.Point(664, 66);
+            this.lblEscolhaPersonagem.Location = new System.Drawing.Point(885, 81);
+            this.lblEscolhaPersonagem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEscolhaPersonagem.Name = "lblEscolhaPersonagem";
-            this.lblEscolhaPersonagem.Size = new System.Drawing.Size(141, 15);
+            this.lblEscolhaPersonagem.Size = new System.Drawing.Size(174, 18);
             this.lblEscolhaPersonagem.TabIndex = 33;
             this.lblEscolhaPersonagem.Text = "Escolha o Personagem:";
             this.lblEscolhaPersonagem.Click += new System.EventHandler(this.lblEscolhaPersonagem_Click);
@@ -424,9 +457,10 @@
             this.lblEstadoDoJogo.AutoSize = true;
             this.lblEstadoDoJogo.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoDoJogo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblEstadoDoJogo.Location = new System.Drawing.Point(278, 201);
+            this.lblEstadoDoJogo.Location = new System.Drawing.Point(371, 247);
+            this.lblEstadoDoJogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoDoJogo.Name = "lblEstadoDoJogo";
-            this.lblEstadoDoJogo.Size = new System.Drawing.Size(204, 22);
+            this.lblEstadoDoJogo.Size = new System.Drawing.Size(251, 29);
             this.lblEstadoDoJogo.TabIndex = 35;
             this.lblEstadoDoJogo.Text = "Estado do Tabuleiro:";
             // 
@@ -434,10 +468,11 @@
             // 
             this.lstEstadoDoJogo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lstEstadoDoJogo.FormattingEnabled = true;
-            this.lstEstadoDoJogo.ItemHeight = 15;
-            this.lstEstadoDoJogo.Location = new System.Drawing.Point(511, 227);
+            this.lstEstadoDoJogo.ItemHeight = 18;
+            this.lstEstadoDoJogo.Location = new System.Drawing.Point(681, 279);
+            this.lstEstadoDoJogo.Margin = new System.Windows.Forms.Padding(4);
             this.lstEstadoDoJogo.Name = "lstEstadoDoJogo";
-            this.lstEstadoDoJogo.Size = new System.Drawing.Size(144, 259);
+            this.lstEstadoDoJogo.Size = new System.Drawing.Size(191, 310);
             this.lstEstadoDoJogo.TabIndex = 36;
             // 
             // label2
@@ -445,27 +480,30 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(664, 163);
+            this.label2.Location = new System.Drawing.Point(885, 201);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 15);
+            this.label2.Size = new System.Drawing.Size(119, 18);
             this.label2.TabIndex = 37;
             this.label2.Text = "Digite seu Voto:";
             // 
             // txtVoto
             // 
             this.txtVoto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.txtVoto.Location = new System.Drawing.Point(666, 181);
+            this.txtVoto.Location = new System.Drawing.Point(888, 223);
+            this.txtVoto.Margin = new System.Windows.Forms.Padding(4);
             this.txtVoto.Name = "txtVoto";
-            this.txtVoto.Size = new System.Drawing.Size(137, 21);
+            this.txtVoto.Size = new System.Drawing.Size(181, 25);
             this.txtVoto.TabIndex = 38;
             // 
             // lblEstadoJogo
             // 
             this.lblEstadoJogo.AutoSize = true;
             this.lblEstadoJogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoJogo.Location = new System.Drawing.Point(931, 57);
+            this.lblEstadoJogo.Location = new System.Drawing.Point(1241, 70);
+            this.lblEstadoJogo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoJogo.Name = "lblEstadoJogo";
-            this.lblEstadoJogo.Size = new System.Drawing.Size(0, 24);
+            this.lblEstadoJogo.Size = new System.Drawing.Size(0, 29);
             this.lblEstadoJogo.TabIndex = 39;
             // 
             // lblUltimasJogadas
@@ -473,9 +511,10 @@
             this.lblUltimasJogadas.AutoSize = true;
             this.lblUltimasJogadas.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltimasJogadas.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUltimasJogadas.Location = new System.Drawing.Point(506, 200);
+            this.lblUltimasJogadas.Location = new System.Drawing.Point(675, 246);
+            this.lblUltimasJogadas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUltimasJogadas.Name = "lblUltimasJogadas";
-            this.lblUltimasJogadas.Size = new System.Drawing.Size(97, 22);
+            this.lblUltimasJogadas.Size = new System.Drawing.Size(117, 29);
             this.lblUltimasJogadas.TabIndex = 40;
             this.lblUltimasJogadas.Text = "Jogadas:";
             // 
@@ -486,9 +525,10 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(935, 519);
+            this.btnSair.Location = new System.Drawing.Point(1247, 639);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(111, 47);
+            this.btnSair.Size = new System.Drawing.Size(148, 58);
             this.btnSair.TabIndex = 41;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
@@ -496,20 +536,42 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(935, 442);
+            this.button1.Location = new System.Drawing.Point(1247, 544);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 42;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnTestarLlama
+            // 
+            this.btnTestarLlama.Location = new System.Drawing.Point(1183, 44);
+            this.btnTestarLlama.Name = "btnTestarLlama";
+            this.btnTestarLlama.Size = new System.Drawing.Size(75, 23);
+            this.btnTestarLlama.TabIndex = 43;
+            this.btnTestarLlama.Text = "Teste IA";
+            this.btnTestarLlama.UseVisualStyleBackColor = true;
+            this.btnTestarLlama.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnDebugBot
+            // 
+            this.btnDebugBot.Location = new System.Drawing.Point(1183, 81);
+            this.btnDebugBot.Name = "btnDebugBot";
+            this.btnDebugBot.Size = new System.Drawing.Size(75, 23);
+            this.btnDebugBot.TabIndex = 44;
+            this.btnDebugBot.Text = "Debug IA";
+            this.btnDebugBot.UseVisualStyleBackColor = true;
+            // 
             // frmLobbyDaPartida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(1058, 578);
+            this.ClientSize = new System.Drawing.Size(1411, 711);
+            this.Controls.Add(this.btnDebugBot);
+            this.Controls.Add(this.btnTestarLlama);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.lblUltimasJogadas);
@@ -549,6 +611,7 @@
             this.Controls.Add(this.bntComecar);
             this.Controls.Add(this.lblJogadores);
             this.Controls.Add(this.lstbJogadores);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLobbyDaPartida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLobbyDaPartida";
@@ -599,5 +662,7 @@
         private System.Windows.Forms.Timer tmrVez;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTestarLlama;
+        private System.Windows.Forms.Button btnDebugBot;
     }
 }

@@ -19,8 +19,8 @@ namespace PI_3_Defensores_de_Hastings
         {
             string retorno = Jogo.ListarPartidas("A");
 
-            // Use StringComparison for better performance on repeated Replace calls
-            retorno = retorno.Replace("\r", string.Empty);
+            // Replace carriage returns
+            retorno = retorno.Replace("\r", "");
             if (retorno.Length > 0)
             {
                 retorno = retorno.Substring(0, retorno.Length - 1);
@@ -34,6 +34,13 @@ namespace PI_3_Defensores_de_Hastings
             for(int i = 0; i < partidas.Length; i++)
             {
                 string partida = partidas[i];
+                
+                // Skip empty entries from the Split operation
+                if (string.IsNullOrWhiteSpace(partida))
+                {
+                    continue;
+                }
+                
                 string[] dados = partida.Split(',');
 
                 // Use object initializer for cleaner code

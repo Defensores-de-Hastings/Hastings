@@ -13,6 +13,16 @@ namespace PI_3_Defensores_de_Hastings
 
         private string[] arEstadoDoJogo;
 
+        // Static dictionary moved outside of loop for performance - avoids recreation on every iteration
+        private static readonly Dictionary<string, string> personagensDict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "A", "Adilson Konrad.png" }, { "B", "Beatriz Paiva.png" }, { "C", "Claro.png" },
+            { "D", "Douglas Baquiao.png" }, { "E", "Eduardo Takeo.png" }, { "G", "Guilherme Rey.png" },
+            { "H", "Heredia.png" }, { "K", "Kelly Kiyumi.png" }, { "L", "Leonardo Takuno.png" },
+            { "M", "Mario Toledo.png" }, { "Q", "Quintas.png" }, { "R", "Ranulfo.png" },
+            { "T", "Toshio.png" }
+        };
+
 
         public Mapa(string estadoDoJogo)
         {
@@ -45,15 +55,6 @@ namespace PI_3_Defensores_de_Hastings
                 string[] persoInfo = LugarPerso.Split(',');
                 string nivel = persoInfo[0];
                 string letraPersonagem = persoInfo[1].Replace("'", "").Trim().ToUpper();
-
-                Dictionary<string, string> personagensDict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-                {
-                    { "A", "Adilson Konrad.png" }, { "B", "Beatriz Paiva.png" }, { "C", "Claro.png" },
-                    { "D", "Douglas Baquiao.png" }, { "E", "Eduardo Takeo.png" }, { "G", "Guilherme Rey.png" },
-                    { "H", "Heredia.png" }, { "K", "Kelly Kiyumi.png" }, { "L", "Leonardo Takuno.png" },
-                    { "M", "Mario Toledo.png" }, { "Q", "Quintas.png" }, { "R", "Ranulfo.png" },
-                    { "T", "Toshio.png" }
-                };
 
                 if (!personagensDict.TryGetValue(letraPersonagem, out string nomeArquivo))
                 {
